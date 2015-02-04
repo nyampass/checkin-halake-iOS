@@ -11,5 +11,6 @@
 
 #import "FlatUIKIt.h"
 #import "AFNetworking.h"
+#import "SwiftBridge.h"
 
 #endif

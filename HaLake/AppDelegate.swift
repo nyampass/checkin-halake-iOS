@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, FUIAlertViewDelegate {
 
     var window: UIWindow?
     
@@ -42,6 +42,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
         return true
     }
+    
+    var isShowCheckinAlert = false
+    
+    func checkin()
+    {
+        if (!isShowCheckinAlert) {
+            isShowCheckinAlert = true
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                let alertView: FUIAlertView = SwiftBridge.createFUIAlertVIew(
+                    nil, message: "チェックインしました！ありがとうございます！",
+                    delegate: self, cancelButtonTitle: nil)
+                alertView.show()
+            })
+        }
+    }
+    
+    func alertView(alertView: FUIAlertView!, clickedButtonAtIndex buttonIndex: Int) {
+
+    }
+
     
     func locationManager(manager: CLLocationManager!, didStartMonitoringForRegion region: CLRegion!) {
         manager?.requestStateForRegion(self.region)
@@ -79,26 +99,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             break
         }
     }
+
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
         if(beacons.count > 0) {
-            let nearestBeacon = beacons[0] as? CLBeacon
-            
-            var proximity:CLProximity! = nearestBeacon?.proximity
-            var bAccuracy:CLLocationAccuracy! = nearestBeacon?.accuracy
-            var rangeMessage:NSString
+            let beacon = beacons[0] as? CLBeacon
+            let proximity:CLProximity! = beacon?.proximity
             
             if(proximity == CLProximity.Immediate) {
-                rangeMessage = "Range Immediate"
-            } else if(proximity == CLProximity.Near) {
-                rangeMessage = "Range Near"
-            } else if(proximity == CLProximity.Far) {
-                rangeMessage = "Range Far"
-            } else if(proximity == CLProximity.Unknown) {
-                rangeMessage = "Range Unknown"
+                self.checkin()
             }
-            
-            let str = "\(bAccuracy) [m]"
-            self.sendLocalNotificationForMessage(str)
         }
     }
     
@@ -113,6 +122,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func setupIBeacon()
     {
         region = CLBeaconRegion(proximityUUID:proximityUUID,identifier:"iBeacon")
+        region?.notifyOnEntry = true
+        region?.notifyOnExit = true
+        region?.notifyEntryStateOnDisplay = false
+        
         manager = CLLocationManager()
         manager?.delegate = self
     
@@ -127,7 +140,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             }else{
                 self.manager?.startRangingBeaconsInRegion(self.region)
             }
-        // case .Restricted, .Denied:
         default:
             println("do nothing")
         }
