@@ -14,11 +14,38 @@ class UIUtils {
         static var TAG_INDICATOR_INDICATOR = 2001
     }
     
+    class func setFUIAlertViewTheme(alertView: FUIAlertView)
+    {
+        // alertView.alertViewStyle = FUIAlertViewStyleSecureTextInput;
+        /*
+        [@[[alertView textFieldAtIndex:0], [alertView textFieldAtIndex:1]] enumerateObjectsUsingBlock:^(FUITextField *textField, NSUInteger idx, BOOL *stop) {
+        [textField setTextFieldColor:[UIColor cloudsColor]];
+        [textField setBorderColor:[UIColor asbestosColor]];
+        [textField setCornerRadius:4];
+        [textField setFont:[UIFont flatFontOfSize:14]];
+        [textField setTextColor:[UIColor midnightBlueColor]];
+        }];
+        [[alertView textFieldAtIndex:0] setPlaceholder:@"Text here!"];
+        */
+        
+        alertView.titleLabel.textColor = UIColor.cloudsColor()
+        alertView.titleLabel.font = UIFont.boldFlatFontOfSize(16.0)
+        alertView.messageLabel.textColor = UIColor.cloudsColor()
+        alertView.messageLabel.font = UIFont.flatFontOfSize(14.0)
+        alertView.backgroundOverlay.backgroundColor = UIColor.cloudsColor().colorWithAlphaComponent(0.8)
+        alertView.alertContainer.backgroundColor = UIColor.midnightBlueColor()
+
+        alertView.defaultButtonColor = UIColor.cloudsColor()
+        alertView.defaultButtonShadowColor = UIColor.asbestosColor()
+        alertView.defaultButtonFont = UIFont.boldFlatFontOfSize(16.0)
+        alertView.defaultButtonTitleColor = UIColor.asbestosColor()
+    }
+    
     class func navigation(controller: UIViewController) -> UINavigationController {
         let navigation = UINavigationController(rootViewController: controller)
         return navigation
     }
-    
+
     class func setNavigationBar(controller: UIViewController, title: String) {
         let bar = controller.navigationController?.navigationBar
         
