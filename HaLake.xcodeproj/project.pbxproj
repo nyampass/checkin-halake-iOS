@@ -7,14 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28E93EE76F5798F71D527B55 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E175B3D3A754A7D9438A507B /* libPods.a */; };
+		DB2B97EB1A5EB82700932750 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B97EA1A5EB82700932750 /* Settings.swift */; };
+		DB559EE51A7914A500B0663D /* TicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB559EE31A7914A500B0663D /* TicketController.swift */; };
+		DB559EE71A7914AB00B0663D /* TicketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB559EE41A7914A500B0663D /* TicketController.xib */; };
+		DB559EE91A791B8600B0663D /* tabbar_me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB559EE81A791B8600B0663D /* tabbar_me@2x.png */; };
+		DB559EEC1A791E4000B0663D /* tabbar_news@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB559EEA1A791E4000B0663D /* tabbar_news@2x.png */; };
+		DB559EED1A791E4000B0663D /* tabbar_ticket@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB559EEB1A791E4000B0663D /* tabbar_ticket@2x.png */; };
+		DB559EF01A7928C200B0663D /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB559EEE1A7928C200B0663D /* AccountController.swift */; };
+		DB559EF11A7928C200B0663D /* AccountController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB559EEF1A7928C200B0663D /* AccountController.xib */; };
+		DB559EF31A792AB200B0663D /* inside_halake@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB559EF21A792AB200B0663D /* inside_halake@2x.jpg */; };
 		DB5B2E571A4BDC3B007B2094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B2E561A4BDC3B007B2094 /* AppDelegate.swift */; };
-		DB5B2E591A4BDC3B007B2094 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B2E581A4BDC3B007B2094 /* RootViewController.swift */; };
-		DB5B2E5B1A4BDC3B007B2094 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B2E5A1A4BDC3B007B2094 /* DataViewController.swift */; };
-		DB5B2E5D1A4BDC3B007B2094 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B2E5C1A4BDC3B007B2094 /* ModelController.swift */; };
-		DB5B2E601A4BDC3B007B2094 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB5B2E5E1A4BDC3B007B2094 /* Main.storyboard */; };
 		DB5B2E621A4BDC3B007B2094 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB5B2E611A4BDC3B007B2094 /* Images.xcassets */; };
 		DB5B2E651A4BDC3B007B2094 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB5B2E631A4BDC3B007B2094 /* LaunchScreen.xib */; };
 		DB5B2E711A4BDC3B007B2094 /* HaLakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B2E701A4BDC3B007B2094 /* HaLakeTests.swift */; };
+		DB5B2E7C1A4C2978007B2094 /* StartupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B2E7A1A4C2978007B2094 /* StartupController.swift */; };
+		DB5B2E7D1A4C2978007B2094 /* StartupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB5B2E7B1A4C2978007B2094 /* StartupController.xib */; };
+		DB7572D01A6B221200E611BE /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7572CF1A6B221200E611BE /* Alamofire.swift */; };
+		DB7572D51A6BE56900E611BE /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7572D31A6BE56900E611BE /* EventController.swift */; };
+		DB7572D61A6BE56900E611BE /* EventController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7572D41A6BE56900E611BE /* EventController.xib */; };
+		DB7572D81A6BE59A00E611BE /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7572D71A6BE59A00E611BE /* SettingController.swift */; };
+		DB7572DA1A6C856D00E611BE /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7572D91A6C856D00E611BE /* Store.swift */; };
+		DB856D821A7EE8CA0073C8AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB856D811A7EE8CA0073C8AB /* CoreLocation.framework */; };
+		DB8F21231A5BD3520075663D /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8F21221A5BD3520075663D /* logo@2x.png */; };
+		DB8F21271A5BD9200075663D /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8F21261A5BD9200075663D /* background@2x.png */; };
+		DB9D5E9D1A7A0FD300848986 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D5E9C1A7A0FD300848986 /* Event.swift */; };
+		DB9D5EA01A7A11D800848986 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D5E9E1A7A11D800848986 /* EventCell.swift */; };
+		DB9D5EA11A7A11D800848986 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB9D5E9F1A7A11D800848986 /* EventCell.xib */; };
+		DB9D5EA31A7A175400848986 /* event_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9D5EA21A7A175400848986 /* event_background@2x.png */; };
+		DB9D5EA51A7A1C5B00848986 /* icon_coffee@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9D5EA41A7A1C5B00848986 /* icon_coffee@2x.png */; };
+		DBA51CE41A799E8100FEB72B /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA51CE31A799E8100FEB72B /* UIUtils.swift */; };
+		DBA51CE61A79B3FC00FEB72B /* TicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA51CE51A79B3FC00FEB72B /* TicketCell.swift */; };
+		DBA51CE81A7A050E00FEB72B /* TicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA51CE71A7A050E00FEB72B /* TicketCell.xib */; };
+		DBA51CEB1A7A065200FEB72B /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA51CEA1A7A065200FEB72B /* Ticket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,18 +53,46 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6EDC750089BF00DE867DC384 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BBA807AFE53DC0AA9ECD125D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		DB2B97EA1A5EB82700932750 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		DB559EE31A7914A500B0663D /* TicketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketController.swift; sourceTree = "<group>"; };
+		DB559EE41A7914A500B0663D /* TicketController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketController.xib; sourceTree = "<group>"; };
+		DB559EE81A791B8600B0663D /* tabbar_me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_me@2x.png"; sourceTree = "<group>"; };
+		DB559EEA1A791E4000B0663D /* tabbar_news@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_news@2x.png"; sourceTree = "<group>"; };
+		DB559EEB1A791E4000B0663D /* tabbar_ticket@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_ticket@2x.png"; sourceTree = "<group>"; };
+		DB559EEE1A7928C200B0663D /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
+		DB559EEF1A7928C200B0663D /* AccountController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountController.xib; sourceTree = "<group>"; };
+		DB559EF21A792AB200B0663D /* inside_halake@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "inside_halake@2x.jpg"; sourceTree = "<group>"; };
 		DB5B2E511A4BDC3B007B2094 /* HaLake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaLake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5B2E551A4BDC3B007B2094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB5B2E561A4BDC3B007B2094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB5B2E581A4BDC3B007B2094 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		DB5B2E5A1A4BDC3B007B2094 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		DB5B2E5C1A4BDC3B007B2094 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
-		DB5B2E5F1A4BDC3B007B2094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB5B2E611A4BDC3B007B2094 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DB5B2E641A4BDC3B007B2094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DB5B2E6A1A4BDC3B007B2094 /* HaLakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaLakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5B2E6F1A4BDC3B007B2094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB5B2E701A4BDC3B007B2094 /* HaLakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaLakeTests.swift; sourceTree = "<group>"; };
+		DB5B2E7A1A4C2978007B2094 /* StartupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupController.swift; sourceTree = "<group>"; };
+		DB5B2E7B1A4C2978007B2094 /* StartupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartupController.xib; sourceTree = "<group>"; };
+		DB7572CF1A6B221200E611BE /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		DB7572D31A6BE56900E611BE /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
+		DB7572D41A6BE56900E611BE /* EventController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventController.xib; sourceTree = "<group>"; };
+		DB7572D71A6BE59A00E611BE /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		DB7572D91A6C856D00E611BE /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		DB856D811A7EE8CA0073C8AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DB8F21221A5BD3520075663D /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		DB8F21261A5BD9200075663D /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		DB8F212A1A5D28020075663D /* HaLake-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HaLake-Bridging-Header.h"; sourceTree = "<group>"; };
+		DB9D5E9C1A7A0FD300848986 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		DB9D5E9E1A7A11D800848986 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		DB9D5E9F1A7A11D800848986 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
+		DB9D5EA21A7A175400848986 /* event_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "event_background@2x.png"; sourceTree = "<group>"; };
+		DB9D5EA41A7A1C5B00848986 /* icon_coffee@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_coffee@2x.png"; sourceTree = "<group>"; };
+		DBA51CE31A799E8100FEB72B /* UIUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
+		DBA51CE51A79B3FC00FEB72B /* TicketCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketCell.swift; sourceTree = "<group>"; };
+		DBA51CE71A7A050E00FEB72B /* TicketCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketCell.xib; sourceTree = "<group>"; };
+		DBA51CEA1A7A065200FEB72B /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		E175B3D3A754A7D9438A507B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB856D821A7EE8CA0073C8AB /* CoreLocation.framework in Frameworks */,
+				28E93EE76F5798F71D527B55 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +115,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26AE43E3237081CC33E91E9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB856D811A7EE8CA0073C8AB /* CoreLocation.framework */,
+				E175B3D3A754A7D9438A507B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E4533E09BDCD804C526A358 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6EDC750089BF00DE867DC384 /* Pods.debug.xcconfig */,
+				BBA807AFE53DC0AA9ECD125D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DB559EE21A7913F000B0663D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB5B2E7A1A4C2978007B2094 /* StartupController.swift */,
+				DB5B2E7B1A4C2978007B2094 /* StartupController.xib */,
+				DB7572D31A6BE56900E611BE /* EventController.swift */,
+				DB7572D41A6BE56900E611BE /* EventController.xib */,
+				DB559EE31A7914A500B0663D /* TicketController.swift */,
+				DB559EE41A7914A500B0663D /* TicketController.xib */,
+				DB559EEE1A7928C200B0663D /* AccountController.swift */,
+				DB559EEF1A7928C200B0663D /* AccountController.xib */,
+				DB7572D71A6BE59A00E611BE /* SettingController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		DB5B2E481A4BDC3B007B2094 = {
 			isa = PBXGroup;
 			children = (
 				DB5B2E531A4BDC3B007B2094 /* HaLake */,
 				DB5B2E6D1A4BDC3B007B2094 /* HaLakeTests */,
 				DB5B2E521A4BDC3B007B2094 /* Products */,
+				2E4533E09BDCD804C526A358 /* Pods */,
+				26AE43E3237081CC33E91E9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,14 +172,18 @@
 		DB5B2E531A4BDC3B007B2094 /* HaLake */ = {
 			isa = PBXGroup;
 			children = (
+				DBA51CE91A7A063900FEB72B /* Models */,
+				DB2B97EA1A5EB82700932750 /* Settings.swift */,
 				DB5B2E561A4BDC3B007B2094 /* AppDelegate.swift */,
-				DB5B2E581A4BDC3B007B2094 /* RootViewController.swift */,
-				DB5B2E5A1A4BDC3B007B2094 /* DataViewController.swift */,
-				DB5B2E5C1A4BDC3B007B2094 /* ModelController.swift */,
-				DB5B2E5E1A4BDC3B007B2094 /* Main.storyboard */,
+				DB559EE21A7913F000B0663D /* Controllers */,
+				DB9D5E9B1A7A09EC00848986 /* Cells */,
 				DB5B2E611A4BDC3B007B2094 /* Images.xcassets */,
 				DB5B2E631A4BDC3B007B2094 /* LaunchScreen.xib */,
 				DB5B2E541A4BDC3B007B2094 /* Supporting Files */,
+				DB7572CF1A6B221200E611BE /* Alamofire.swift */,
+				DB7572D91A6C856D00E611BE /* Store.swift */,
+				DB8F212A1A5D28020075663D /* HaLake-Bridging-Header.h */,
+				DBA51CE31A799E8100FEB72B /* UIUtils.swift */,
 			);
 			path = HaLake;
 			sourceTree = "<group>";
@@ -96,6 +191,14 @@
 		DB5B2E541A4BDC3B007B2094 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB9D5EA41A7A1C5B00848986 /* icon_coffee@2x.png */,
+				DB9D5EA21A7A175400848986 /* event_background@2x.png */,
+				DB559EF21A792AB200B0663D /* inside_halake@2x.jpg */,
+				DB559EEA1A791E4000B0663D /* tabbar_news@2x.png */,
+				DB559EEB1A791E4000B0663D /* tabbar_ticket@2x.png */,
+				DB559EE81A791B8600B0663D /* tabbar_me@2x.png */,
+				DB8F21261A5BD9200075663D /* background@2x.png */,
+				DB8F21221A5BD3520075663D /* logo@2x.png */,
 				DB5B2E551A4BDC3B007B2094 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -118,6 +221,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DB9D5E9B1A7A09EC00848986 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DBA51CE51A79B3FC00FEB72B /* TicketCell.swift */,
+				DBA51CE71A7A050E00FEB72B /* TicketCell.xib */,
+				DB9D5E9E1A7A11D800848986 /* EventCell.swift */,
+				DB9D5E9F1A7A11D800848986 /* EventCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		DBA51CE91A7A063900FEB72B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DBA51CEA1A7A065200FEB72B /* Ticket.swift */,
+				DB9D5E9C1A7A0FD300848986 /* Event.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB5B2E741A4BDC3B007B2094 /* Build configuration list for PBXNativeTarget "HaLake" */;
 			buildPhases = (
+				9E2991F4AC3EB60AFC1DC0A9 /* Check Pods Manifest.lock */,
 				DB5B2E4D1A4BDC3B007B2094 /* Sources */,
 				DB5B2E4E1A4BDC3B007B2094 /* Frameworks */,
 				DB5B2E4F1A4BDC3B007B2094 /* Resources */,
+				407DDADB5118967D4697277F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,9 +323,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB5B2E601A4BDC3B007B2094 /* Main.storyboard in Resources */,
+				DB8F21231A5BD3520075663D /* logo@2x.png in Resources */,
+				DB559EEC1A791E4000B0663D /* tabbar_news@2x.png in Resources */,
+				DB9D5EA51A7A1C5B00848986 /* icon_coffee@2x.png in Resources */,
+				DB559EF31A792AB200B0663D /* inside_halake@2x.jpg in Resources */,
+				DB5B2E7D1A4C2978007B2094 /* StartupController.xib in Resources */,
+				DB559EED1A791E4000B0663D /* tabbar_ticket@2x.png in Resources */,
+				DB9D5EA31A7A175400848986 /* event_background@2x.png in Resources */,
+				DB7572D61A6BE56900E611BE /* EventController.xib in Resources */,
+				DB9D5EA11A7A11D800848986 /* EventCell.xib in Resources */,
 				DB5B2E651A4BDC3B007B2094 /* LaunchScreen.xib in Resources */,
+				DB8F21271A5BD9200075663D /* background@2x.png in Resources */,
+				DBA51CE81A7A050E00FEB72B /* TicketCell.xib in Resources */,
+				DB559EF11A7928C200B0663D /* AccountController.xib in Resources */,
+				DB559EE91A791B8600B0663D /* tabbar_me@2x.png in Resources */,
 				DB5B2E621A4BDC3B007B2094 /* Images.xcassets in Resources */,
+				DB559EE71A7914AB00B0663D /* TicketController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,15 +351,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		407DDADB5118967D4697277F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E2991F4AC3EB60AFC1DC0A9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DB5B2E4D1A4BDC3B007B2094 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB5B2E591A4BDC3B007B2094 /* RootViewController.swift in Sources */,
-				DB5B2E5D1A4BDC3B007B2094 /* ModelController.swift in Sources */,
-				DB5B2E5B1A4BDC3B007B2094 /* DataViewController.swift in Sources */,
+				DBA51CE61A79B3FC00FEB72B /* TicketCell.swift in Sources */,
+				DB7572D81A6BE59A00E611BE /* SettingController.swift in Sources */,
+				DB559EE51A7914A500B0663D /* TicketController.swift in Sources */,
+				DB5B2E7C1A4C2978007B2094 /* StartupController.swift in Sources */,
+				DB7572DA1A6C856D00E611BE /* Store.swift in Sources */,
+				DB2B97EB1A5EB82700932750 /* Settings.swift in Sources */,
+				DB9D5EA01A7A11D800848986 /* EventCell.swift in Sources */,
+				DBA51CE41A799E8100FEB72B /* UIUtils.swift in Sources */,
+				DBA51CEB1A7A065200FEB72B /* Ticket.swift in Sources */,
+				DB7572D51A6BE56900E611BE /* EventController.swift in Sources */,
+				DB559EF01A7928C200B0663D /* AccountController.swift in Sources */,
 				DB5B2E571A4BDC3B007B2094 /* AppDelegate.swift in Sources */,
+				DB7572D01A6B221200E611BE /* Alamofire.swift in Sources */,
+				DB9D5E9D1A7A0FD300848986 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +425,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DB5B2E5E1A4BDC3B007B2094 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB5B2E5F1A4BDC3B007B2094 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DB5B2E631A4BDC3B007B2094 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -342,21 +515,27 @@
 		};
 		DB5B2E751A4BDC3B007B2094 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EDC750089BF00DE867DC384 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HaLake/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/HaLake-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		DB5B2E761A4BDC3B007B2094 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBA807AFE53DC0AA9ECD125D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HaLake/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/HaLake-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -413,6 +592,7 @@
 				DB5B2E761A4BDC3B007B2094 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB5B2E771A4BDC3B007B2094 /* Build configuration list for PBXNativeTarget "HaLakeTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +601,7 @@
 				DB5B2E791A4BDC3B007B2094 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
