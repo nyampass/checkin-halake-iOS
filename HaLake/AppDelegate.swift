@@ -11,9 +11,8 @@ import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, FUIAlertViewDelegate {
-
     var window: UIWindow?
-    
+
     var region: CLBeaconRegion?
     var manager: CLLocationManager?
     let proximityUUID = NSUUID(UUIDString:"00000000-4590-1001-B000-001C4D92F266")
@@ -33,17 +32,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             application.registerUserNotificationSettings(settings)
         }
         
-        let (id, _) = User.authentication()
+        let (id, password) = User.authentication()
         if (id == nil) {
             window?.rootViewController = StartupController()
         } else {
-            window?.rootViewController = self.mainController()
+            window?.rootViewController = mainController()
+            
         }
         window?.makeKeyAndVisible()
-
         return true
     }
-    
+
     var isShowCheckinAlert = false
     
     func checkin()
@@ -53,12 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
 //                let v = UIAlertView(title: nil, message: "チェックインしました", delegate: self, cancelButtonTitle: "OK")
 //v.show()
-
-                let alertView: FUIAlertView = SwiftBridge.createFUIAlertVIew(
-                    "チェックイン", message: "HaLakeにチェックインしました！\nありがとうございます！",
-                    delegate: self, cancelButtonTitle: "OK")
-                UIUtils.setFUIAlertViewTheme(alertView)
-
+                
+                let alertView = UIUtils.alertView(nil, message: "HaLakeにチェックインしました！\nありがとうございます！",
+                    delegate: nil, cancelButtonTitle: "OK")
                 alertView.show()
             })
         }
@@ -160,12 +156,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func mainController() -> UITabBarController {
-        let tabBarController = UITabBarController()
+        let tabBarController = TabBarController()
 
         let tabs = NSArray(objects: UIUtils.navigation(TicketController()),
             UIUtils.navigation(EventController()),
             UIUtils.navigation(AccountController()))
         tabBarController.setViewControllers(tabs, animated: false)
+
+        tabBarController.selectedIndex = 1
 
         return tabBarController
     }

@@ -44,6 +44,8 @@
 		DBD710071A83381000B47EA8 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD710061A83381000B47EA8 /* CreateAccountController.swift */; };
 		DBD7100A1A833D4000B47EA8 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD710081A833D4000B47EA8 /* InputCell.swift */; };
 		DBD7100B1A833D4000B47EA8 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBD710091A833D4000B47EA8 /* InputCell.xib */; };
+		DBD7100D1A8376DE00B47EA8 /* HaLakeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7100C1A8376DE00B47EA8 /* HaLakeAPI.swift */; };
+		DBD7100F1A837ED400B47EA8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7100E1A837ED400B47EA8 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		DBD710061A83381000B47EA8 /* CreateAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		DBD710081A833D4000B47EA8 /* InputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
 		DBD710091A833D4000B47EA8 /* InputCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
+		DBD7100C1A8376DE00B47EA8 /* HaLakeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HaLakeAPI.swift; sourceTree = "<group>"; };
+		DBD7100E1A837ED400B47EA8 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E175B3D3A754A7D9438A507B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,6 +159,7 @@
 				DB559EEE1A7928C200B0663D /* AccountController.swift */,
 				DB559EEF1A7928C200B0663D /* AccountController.xib */,
 				DB7572D71A6BE59A00E611BE /* SettingController.swift */,
+				DBD7100E1A837ED400B47EA8 /* TabBarController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 				DB7572CF1A6B221200E611BE /* Alamofire.swift */,
 				DB8F212A1A5D28020075663D /* HaLake-Bridging-Header.h */,
 				DBA51CE31A799E8100FEB72B /* UIUtils.swift */,
+				DBD7100C1A8376DE00B47EA8 /* HaLakeAPI.swift */,
 			);
 			path = HaLake;
 			sourceTree = "<group>";
@@ -414,8 +420,10 @@
 				DBA51CE41A799E8100FEB72B /* UIUtils.swift in Sources */,
 				DBA51CEB1A7A065200FEB72B /* Ticket.swift in Sources */,
 				DBD710051A832F7C00B47EA8 /* Settings.swift in Sources */,
+				DBD7100F1A837ED400B47EA8 /* TabBarController.swift in Sources */,
 				DBD7100A1A833D4000B47EA8 /* InputCell.swift in Sources */,
 				DB7572D51A6BE56900E611BE /* EventController.swift in Sources */,
+				DBD7100D1A8376DE00B47EA8 /* HaLakeAPI.swift in Sources */,
 				DB559EF01A7928C200B0663D /* AccountController.swift in Sources */,
 				DB5B2E571A4BDC3B007B2094 /* AppDelegate.swift in Sources */,
 				DBD710071A83381000B47EA8 /* CreateAccountController.swift in Sources */,
