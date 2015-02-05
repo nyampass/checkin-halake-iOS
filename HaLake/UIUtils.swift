@@ -24,7 +24,7 @@ class UIUtils {
         return barButtonItem
     }
     
-    class func setFUIAlertViewTheme(alertView: FUIAlertView)
+    private class func setAlertViewTheme(alertView: FUIAlertView)
     {
         alertView.titleLabel.textColor = UIColor.cloudsColor()
         alertView.titleLabel.font = UIFont.boldFlatFontOfSize(16.0)
@@ -39,9 +39,16 @@ class UIUtils {
         alertView.defaultButtonTitleColor = UIColor.asbestosColor()
     }
     
+    class func alertView(title: String?, message: String?, delegate:FUIAlertViewDelegate?, cancelButtonTitle: String?) -> FUIAlertView {
+        let alert = SwiftBridge.createFUIAlertVIew(title, message: message, delegate: delegate, cancelButtonTitle: cancelButtonTitle)
+        setAlertViewTheme(alert)
+
+        return alert
+    }
+    
     class func navigation(controller: UIViewController) -> UINavigationController {
         let navigation = UINavigationController(rootViewController: controller)
-        navigation.navigationBar.configureFlatNavigationBarWithColor(UIColor.orangeColor())
+        navigation.navigationBar.configureFlatNavigationBarWithColor(UIColor.cloudsColor())
 
         return navigation
     }
@@ -49,11 +56,11 @@ class UIUtils {
     class func setNavigationBar(controller: UIViewController, title: String) {
         let bar = controller.navigationController?.navigationBar
         
-        bar?.barTintColor = UIColor.sunflowerColor()
+        bar?.barTintColor = UIColor.cloudsColor()
 
         let titleLabel = UILabel(frame: CGRectZero)
         // titleLabel.font = UIFont.boldSystemFontOfSize(16.0)
-        titleLabel.textColor = UIColor.whiteColor()
+        titleLabel.textColor = UIColor.asbestosColor()
         titleLabel.text = title
         titleLabel.sizeToFit()
         controller.navigationItem.titleView = titleLabel
