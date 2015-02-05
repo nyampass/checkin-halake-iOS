@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="backgroundScrollView" destination="ord-wa-tm6" id="wBr-GO-E1J"/>
                 <outlet property="button" destination="I5P-gS-Xpz" id="VYE-4e-AUp"/>
+                <outlet property="createAccountButton" destination="5Zs-16-nZB" id="oie-pS-P6o"/>
                 <outlet property="emailTextField" destination="Arf-uH-xPO" id="m1E-W4-y0l"/>
                 <outlet property="mainView" destination="OkW-iu-C7F" id="grj-Hz-6EK"/>
                 <outlet property="passwordTextField" destination="OoQ-Lw-4mH" id="hEg-xu-pgf"/>
@@ -29,8 +30,8 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <view contentMode="scaleToFill" id="OkW-iu-C7F">
-                            <rect key="frame" x="28" y="127" width="263" height="314"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <rect key="frame" x="29" y="111" width="263" height="345"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" id="rms-VY-pFe">
                                     <rect key="frame" x="-29" y="33" width="320" height="124"/>
@@ -68,9 +69,22 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="I5P-gS-Xpz" customClass="FUIButton">
                                     <rect key="frame" x="58" y="270" width="147" height="36"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="ログインasdfdsfdsf">
+                                    <state key="normal" title="ログイン!">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="tapLogin:" destination="-1" eventType="touchUpInside" id="n4n-JF-VUC"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5Zs-16-nZB" customClass="FUIButton">
+                                    <rect key="frame" x="58" y="309" width="147" height="36"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                    <state key="normal" title="Button">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapCreateAccount:" destination="-1" eventType="touchUpInside" id="jKa-rp-R2p"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

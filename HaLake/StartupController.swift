@@ -10,7 +10,7 @@ import UIKit
 
 // import Alamofire
 
-class StartupController: UIViewController, UITextFieldDelegate {
+class StartupController: UIViewController, UITextFieldDelegate, UIPopoverControllerDelegate {
     @IBOutlet weak var backgroundScrollView: UIScrollView!
     required init(coder aDecoder: NSCoder) {
         super.init(nibName: "StartupController", bundle: nil)
@@ -24,28 +24,38 @@ class StartupController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var createAccountButton: FUIButton!
 
-    var myButton: FUIButton? = nil
+    @IBOutlet var createAccountView: UIScrollView!
+    
+    var loginButton: FUIButton? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginButton = button as FUIButton
+        loginButton?.buttonColor = UIColor.turquoiseColor()
+        loginButton?.shadowColor = UIColor.greenSeaColor()
+        loginButton?.shadowHeight = 3.0
+        loginButton?.cornerRadius = 6.0;
+        loginButton?.titleLabel?.font = UIFont.boldFlatFontOfSize(16)
+        loginButton?.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Normal)
+        loginButton?.setTitleColor(UIColor.cloudsColor(), forState:UIControlState.Highlighted)
 
-        myButton = FUIButton()
-        myButton?.setTitle("ログイン!", forState: .Normal)
-        myButton!.buttonColor = UIColor.turquoiseColor()
-        myButton?.shadowColor = UIColor.greenSeaColor()
-        myButton?.shadowHeight = 3.0
-        myButton?.cornerRadius = 6.0;
-        myButton?.titleLabel?.font = UIFont.boldFlatFontOfSize(16)
-        myButton?.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Normal)
-        myButton?.setTitleColor(UIColor.cloudsColor(), forState:UIControlState.Highlighted)
-        
-        myButton?.addTarget(self, action: "onLogin", forControlEvents: .TouchUpInside)
-        
-        // button.hidden = true
-        button.superview?.addSubview(myButton!)
-        
+        createAccountButton?.buttonColor = UIColor.sunflowerColor()
+        createAccountButton?.shadowColor = UIColor.orangeColor()
+        createAccountButton?.shadowHeight = 3.0
+        createAccountButton?.cornerRadius = 6.0;
+        createAccountButton?.titleLabel?.font = UIFont.boldFlatFontOfSize(16)
+        createAccountButton?.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Normal)
+        createAccountButton?.setTitleColor(UIColor.cloudsColor(), forState:UIControlState.Highlighted)
+
         self.registerForKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+        super.viewWillDisappear(animated)
     }
     
     func registerForKeyboardNotifications() {
@@ -75,8 +85,7 @@ class StartupController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
-    func onLogin() {
+    @IBAction func tapLogin(sender: AnyObject) {
         UIUtils.showActivityIndicator(self.view)
         
         var params = [
@@ -100,7 +109,7 @@ class StartupController: UIViewController, UITextFieldDelegate {
                     
                         if (isSuccess) {
                             let id = json["user"]?["_id"]? as String
-                            Store.saveAccountId(id)
+                            User.saveAuthentication(id, password: params["password"]!)
                             
                             let delegate = UIApplication.sharedApplication().delegate as AppDelegate
                             delegate.window?.rootViewController = delegate.mainController()
@@ -115,9 +124,10 @@ class StartupController: UIViewController, UITextFieldDelegate {
                     UIUtils.hideActivityIndicator(self.view)
 
                     let alert = UIAlertView()
-                    alert.title = "Alert"
+
                     alert.message = alertMessage
-                    alert.addButtonWithTitle("Understod")
+                    alert.addButtonWithTitle("OK")
+
                     alert.show()
                 })
         }
@@ -125,12 +135,17 @@ class StartupController: UIViewController, UITextFieldDelegate {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        myButton?.frame = self.button.frame
+        loginButton?.frame = self.button.frame
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    @IBAction func tapCreateAccount(sender: AnyObject) {
+        presentViewController(UIUtils.navigation(CreateAccountController()), animated: true, completion: nil)
+    }
 
-        myButton?.frame = self.button.frame
+    override func viewWillAppear(animated: Bool) {
+        loginButton?.frame = self.button.frame
+        navigationController?.navigationBarHidden = true
+        
+        super.viewWillAppear(animated)
     }
 }

@@ -16,12 +16,13 @@ class CreateAccountController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "ユーザ登録"
+        UIUtils.setNavigationBar(self, title: "ユーザ登録")
 
-        UIBarButtonItem.configureFlatButtonsWithColor(UIColor.peterRiverColor(), highlightedColor: UIColor.belizeHoleColor(), cornerRadius: 3)
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "作成", style: .Plain, target: self, action: "tapCreate:")
-
+        UIBarButtonItem.configureFlatButtonsWithColor(UIColor.pumpkinColor(),
+            highlightedColor: UIColor.carrotColor(), cornerRadius: 2)
+        
+        self.navigationItem.leftBarButtonItem = UIUtils.barButtonItem("閉じる", target: self, action: "tapCancel:")
+        self.navigationItem.rightBarButtonItem = UIUtils.barButtonItem("作成", target: self, action: "tapCreate:")
         
         let nib = UINib(nibName: "InputCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "InputCell")
@@ -33,6 +34,11 @@ class CreateAccountController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
+    }
+    
+    func tapCancel(barButtonItem: UIBarButtonItem)
+    {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func tapCreate(barButtonItem: UIBarButtonItem)
@@ -61,7 +67,7 @@ class CreateAccountController: UITableViewController {
                         
                         if (isSuccess) {
                             let id = json["user"]?["_id"]? as String
-                            Store.saveAccountId(id)
+                            User.saveAuthentication(id, password: params["password"]!)
                             
                             let delegate = UIApplication.sharedApplication().delegate as AppDelegate
                             delegate.window?.rootViewController = delegate.mainController()
@@ -94,30 +100,36 @@ class CreateAccountController: UITableViewController {
             //playerTextField.returnKeyType = UIReturnKeyDone;
             //playerTextField.secureTextEntry = YES;
             
-            let label = inputCell.label
+            var label: String = "", isSecure: Bool = false
 
             switch (indexPath.row) {
             case 0:
-                label.text = "名前"
+                label = "名前"
                 nameField = inputCell.textField
                 
             case 1:
-                label.text = "メール"
+                label = "メール"
                 emailField = inputCell.textField
                 
             case 2:
-                label.text = "パスワード"
+                label = "パスワード"
                 passwordFied = inputCell.textField
+                isSecure = true
                 
                 
             case 3:
-                label.text = "確認用パスワード"
+                label = "確認用パスワード"
+                isSecure = true
                 confirmPasswordField = inputCell.textField
             
             default:
                 break;
             }
             
+            
+            inputCell.label.text = ""
+            inputCell.textField.placeholder = label
+            inputCell.textField.secureTextEntry = isSecure
         }
         
         return cell

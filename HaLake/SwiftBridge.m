@@ -8,6 +8,8 @@
 
 #import "SwiftBridge.h"
 
+#import "NSString+Icons.h"
+
 @implementation SwiftBridge
 
 + (FUIAlertView *)createFUIAlertVIew:(NSString* )title message:(NSString *)message delegate:(id<FUIAlertViewDelegate>)delegate
@@ -15,6 +17,10 @@
 {
     return [[FUIAlertView alloc] initWithTitle:title message:message delegate:delegate
                              cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil];
+}
+
++ (NSString *)iconString {
+    return [NSString iconStringForEnum:FUIHeart];
 }
 
 @end

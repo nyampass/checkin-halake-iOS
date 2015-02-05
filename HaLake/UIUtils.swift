@@ -14,20 +14,18 @@ class UIUtils {
         static var TAG_INDICATOR_INDICATOR = 2001
     }
     
+    class func barButtonItem(title: String, target: AnyObject?, action: Selector) -> UIBarButtonItem
+    {
+        let barButtonItem = UIBarButtonItem(title: title, style: .Plain, target: target, action: action)
+
+        barButtonItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()],
+            forState: UIControlState.Normal)
+
+        return barButtonItem
+    }
+    
     class func setFUIAlertViewTheme(alertView: FUIAlertView)
     {
-        // alertView.alertViewStyle = FUIAlertViewStyleSecureTextInput;
-        /*
-        [@[[alertView textFieldAtIndex:0], [alertView textFieldAtIndex:1]] enumerateObjectsUsingBlock:^(FUITextField *textField, NSUInteger idx, BOOL *stop) {
-        [textField setTextFieldColor:[UIColor cloudsColor]];
-        [textField setBorderColor:[UIColor asbestosColor]];
-        [textField setCornerRadius:4];
-        [textField setFont:[UIFont flatFontOfSize:14]];
-        [textField setTextColor:[UIColor midnightBlueColor]];
-        }];
-        [[alertView textFieldAtIndex:0] setPlaceholder:@"Text here!"];
-        */
-        
         alertView.titleLabel.textColor = UIColor.cloudsColor()
         alertView.titleLabel.font = UIFont.boldFlatFontOfSize(16.0)
         alertView.messageLabel.textColor = UIColor.cloudsColor()
@@ -43,16 +41,18 @@ class UIUtils {
     
     class func navigation(controller: UIViewController) -> UINavigationController {
         let navigation = UINavigationController(rootViewController: controller)
+        navigation.navigationBar.configureFlatNavigationBarWithColor(UIColor.orangeColor())
+
         return navigation
     }
 
     class func setNavigationBar(controller: UIViewController, title: String) {
         let bar = controller.navigationController?.navigationBar
         
-        bar?.barTintColor = UIUtils.UIColorFromHex(0xff9300)
+        bar?.barTintColor = UIColor.sunflowerColor()
 
         let titleLabel = UILabel(frame: CGRectZero)
-        titleLabel.font = UIFont.boldSystemFontOfSize(16.0)
+        // titleLabel.font = UIFont.boldSystemFontOfSize(16.0)
         titleLabel.textColor = UIColor.whiteColor()
         titleLabel.text = title
         titleLabel.sizeToFit()
