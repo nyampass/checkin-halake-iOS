@@ -9,8 +9,12 @@
 import UIKit
 
 class EventController: UITableViewController {
+    var events: Array<Event>?
+
     override init() {
         super.init()
+        
+        self.events = Array<Event>()
 
         self.tabBarItem.image = UIImage(named:"tabbar_news.png")
         self.tabBarItem.title = "イベント"
@@ -34,15 +38,20 @@ class EventController: UITableViewController {
         UIUtils.setNavigationBar(self, title: self.tabBarItem.title!)
         
         var nib  = UINib(nibName: "EventCell", bundle:nil)
+        tableView.allowsSelection = false
         tableView.registerNib(nib, forCellReuseIdentifier: "EventCell")
-
-        addRow()
-        addRow()
-        addRow()
-        addRow()
-
     }
-
+    
+    func authentication() {
+        let (id, password) = User.authentication()
+        
+        
+    }
+    
+    func setEvents(events: Array<Event>) {
+        self.events = events
+        tableView.reloadData()
+    }
     
     let kCellIdentifier = "EventCell"
     
@@ -136,4 +145,5 @@ class EventController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 145
     }
+    
 }

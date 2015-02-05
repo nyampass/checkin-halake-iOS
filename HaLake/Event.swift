@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Event {
+class Event {
     var title: String
     var imageURL: NSURL
     var date: NSDate
@@ -19,5 +19,11 @@ struct Event {
         self.imageURL = imageURL
         self.date = date
         self.contentURL = contentURL
+    }
+    
+    class func dic2event(dic: Dictionary<String, AnyObject>) -> Event? {
+        //let date = dic["event-at"] as
+        //let contentURL = dic["content-url"]
+        return Event(title: dic["title"] as String, imageURL: NSURL(), date: NSDate(), contentURL: NSURL())
     }
 }
