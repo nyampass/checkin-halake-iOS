@@ -21,6 +21,13 @@ class TabBarController: UITabBarController {
             
             if (alertMessage != nil) {
                 UIApplication.sharedApplication().delegate?.window!?.rootViewController = StartupController()
+            } else {
+                HaLakeAPI.events({ (eventsData) -> () in
+                    if eventsData != nil {
+                        let eventController = self.viewControllers![1] as EventController
+                        eventController.setEvents(eventsData!)
+                    }
+                })
             }
         }
     }
