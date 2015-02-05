@@ -33,8 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             application.registerUserNotificationSettings(settings)
         }
         
-        if (Store.account()? == nil) {
-            window?.rootViewController = UIUtils.navigation(StartupController())
+        let (id, _) = User.authentication()
+        if (id == nil) {
+            window?.rootViewController = StartupController()
         } else {
             window?.rootViewController = self.mainController()
         }

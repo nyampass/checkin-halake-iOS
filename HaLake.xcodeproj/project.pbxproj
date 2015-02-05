@@ -27,7 +27,7 @@
 		DB7572D51A6BE56900E611BE /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7572D31A6BE56900E611BE /* EventController.swift */; };
 		DB7572D61A6BE56900E611BE /* EventController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7572D41A6BE56900E611BE /* EventController.xib */; };
 		DB7572D81A6BE59A00E611BE /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7572D71A6BE59A00E611BE /* SettingController.swift */; };
-		DB7572DA1A6C856D00E611BE /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7572D91A6C856D00E611BE /* Store.swift */; };
+		DB7572DA1A6C856D00E611BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7572D91A6C856D00E611BE /* User.swift */; };
 		DB856D821A7EE8CA0073C8AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB856D811A7EE8CA0073C8AB /* CoreLocation.framework */; };
 		DB8F21231A5BD3520075663D /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8F21221A5BD3520075663D /* logo@2x.png */; };
 		DB8F21271A5BD9200075663D /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8F21261A5BD9200075663D /* background@2x.png */; };
@@ -83,7 +83,7 @@
 		DB7572D31A6BE56900E611BE /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		DB7572D41A6BE56900E611BE /* EventController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventController.xib; sourceTree = "<group>"; };
 		DB7572D71A6BE59A00E611BE /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
-		DB7572D91A6C856D00E611BE /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		DB7572D91A6C856D00E611BE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DB856D811A7EE8CA0073C8AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DB8F21221A5BD3520075663D /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		DB8F21261A5BD9200075663D /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
@@ -190,7 +190,6 @@
 				DB5B2E631A4BDC3B007B2094 /* LaunchScreen.xib */,
 				DB5B2E541A4BDC3B007B2094 /* Supporting Files */,
 				DB7572CF1A6B221200E611BE /* Alamofire.swift */,
-				DB7572D91A6C856D00E611BE /* Store.swift */,
 				DB8F212A1A5D28020075663D /* HaLake-Bridging-Header.h */,
 				DBA51CE31A799E8100FEB72B /* UIUtils.swift */,
 			);
@@ -248,6 +247,7 @@
 		DBA51CE91A7A063900FEB72B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DB7572D91A6C856D00E611BE /* User.swift */,
 				DBA51CEA1A7A065200FEB72B /* Ticket.swift */,
 				DB9D5E9C1A7A0FD300848986 /* Event.swift */,
 				DBD710041A832F7C00B47EA8 /* Settings.swift */,
@@ -408,7 +408,7 @@
 				DB7572D81A6BE59A00E611BE /* SettingController.swift in Sources */,
 				DB559EE51A7914A500B0663D /* TicketController.swift in Sources */,
 				DB5B2E7C1A4C2978007B2094 /* StartupController.swift in Sources */,
-				DB7572DA1A6C856D00E611BE /* Store.swift in Sources */,
+				DB7572DA1A6C856D00E611BE /* User.swift in Sources */,
 				DB32202A1A81DB9800643606 /* SwiftBridge.m in Sources */,
 				DB9D5EA01A7A11D800848986 /* EventCell.swift in Sources */,
 				DBA51CE41A799E8100FEB72B /* UIUtils.swift in Sources */,
