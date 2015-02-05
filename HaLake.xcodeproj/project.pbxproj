@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		28E93EE76F5798F71D527B55 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E175B3D3A754A7D9438A507B /* libPods.a */; };
-		DB2B97EB1A5EB82700932750 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B97EA1A5EB82700932750 /* Settings.swift */; };
 		DB32202A1A81DB9800643606 /* SwiftBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3220291A81DB9800643606 /* SwiftBridge.m */; };
 		DB559EE51A7914A500B0663D /* TicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB559EE31A7914A500B0663D /* TicketController.swift */; };
 		DB559EE71A7914AB00B0663D /* TicketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB559EE41A7914A500B0663D /* TicketController.xib */; };
@@ -41,6 +40,10 @@
 		DBA51CE61A79B3FC00FEB72B /* TicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA51CE51A79B3FC00FEB72B /* TicketCell.swift */; };
 		DBA51CE81A7A050E00FEB72B /* TicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA51CE71A7A050E00FEB72B /* TicketCell.xib */; };
 		DBA51CEB1A7A065200FEB72B /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA51CEA1A7A065200FEB72B /* Ticket.swift */; };
+		DBD710051A832F7C00B47EA8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD710041A832F7C00B47EA8 /* Settings.swift */; };
+		DBD710071A83381000B47EA8 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD710061A83381000B47EA8 /* CreateAccountController.swift */; };
+		DBD7100A1A833D4000B47EA8 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD710081A833D4000B47EA8 /* InputCell.swift */; };
+		DBD7100B1A833D4000B47EA8 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBD710091A833D4000B47EA8 /* InputCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +59,6 @@
 /* Begin PBXFileReference section */
 		6EDC750089BF00DE867DC384 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BBA807AFE53DC0AA9ECD125D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		DB2B97EA1A5EB82700932750 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		DB3220281A81DB9800643606 /* SwiftBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftBridge.h; sourceTree = "<group>"; };
 		DB3220291A81DB9800643606 /* SwiftBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftBridge.m; sourceTree = "<group>"; };
 		DB559EE31A7914A500B0663D /* TicketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,10 @@
 		DBA51CE51A79B3FC00FEB72B /* TicketCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketCell.swift; sourceTree = "<group>"; };
 		DBA51CE71A7A050E00FEB72B /* TicketCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketCell.xib; sourceTree = "<group>"; };
 		DBA51CEA1A7A065200FEB72B /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		DBD710041A832F7C00B47EA8 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		DBD710061A83381000B47EA8 /* CreateAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
+		DBD710081A833D4000B47EA8 /* InputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
+		DBD710091A833D4000B47EA8 /* InputCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
 		E175B3D3A754A7D9438A507B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -141,6 +147,7 @@
 			children = (
 				DB5B2E7A1A4C2978007B2094 /* StartupController.swift */,
 				DB5B2E7B1A4C2978007B2094 /* StartupController.xib */,
+				DBD710061A83381000B47EA8 /* CreateAccountController.swift */,
 				DB7572D31A6BE56900E611BE /* EventController.swift */,
 				DB7572D41A6BE56900E611BE /* EventController.xib */,
 				DB559EE31A7914A500B0663D /* TicketController.swift */,
@@ -176,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				DBA51CE91A7A063900FEB72B /* Models */,
-				DB2B97EA1A5EB82700932750 /* Settings.swift */,
 				DB5B2E561A4BDC3B007B2094 /* AppDelegate.swift */,
 				DB559EE21A7913F000B0663D /* Controllers */,
 				DB9D5E9B1A7A09EC00848986 /* Cells */,
@@ -229,6 +235,8 @@
 		DB9D5E9B1A7A09EC00848986 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				DBD710081A833D4000B47EA8 /* InputCell.swift */,
+				DBD710091A833D4000B47EA8 /* InputCell.xib */,
 				DBA51CE51A79B3FC00FEB72B /* TicketCell.swift */,
 				DBA51CE71A7A050E00FEB72B /* TicketCell.xib */,
 				DB9D5E9E1A7A11D800848986 /* EventCell.swift */,
@@ -242,6 +250,7 @@
 			children = (
 				DBA51CEA1A7A065200FEB72B /* Ticket.swift */,
 				DB9D5E9C1A7A0FD300848986 /* Event.swift */,
+				DBD710041A832F7C00B47EA8 /* Settings.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -344,6 +353,7 @@
 				DB559EE91A791B8600B0663D /* tabbar_me@2x.png in Resources */,
 				DB5B2E621A4BDC3B007B2094 /* Images.xcassets in Resources */,
 				DB559EE71A7914AB00B0663D /* TicketController.xib in Resources */,
+				DBD7100B1A833D4000B47EA8 /* InputCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,14 +409,16 @@
 				DB559EE51A7914A500B0663D /* TicketController.swift in Sources */,
 				DB5B2E7C1A4C2978007B2094 /* StartupController.swift in Sources */,
 				DB7572DA1A6C856D00E611BE /* Store.swift in Sources */,
-				DB2B97EB1A5EB82700932750 /* Settings.swift in Sources */,
 				DB32202A1A81DB9800643606 /* SwiftBridge.m in Sources */,
 				DB9D5EA01A7A11D800848986 /* EventCell.swift in Sources */,
 				DBA51CE41A799E8100FEB72B /* UIUtils.swift in Sources */,
 				DBA51CEB1A7A065200FEB72B /* Ticket.swift in Sources */,
+				DBD710051A832F7C00B47EA8 /* Settings.swift in Sources */,
+				DBD7100A1A833D4000B47EA8 /* InputCell.swift in Sources */,
 				DB7572D51A6BE56900E611BE /* EventController.swift in Sources */,
 				DB559EF01A7928C200B0663D /* AccountController.swift in Sources */,
 				DB5B2E571A4BDC3B007B2094 /* AppDelegate.swift in Sources */,
+				DBD710071A83381000B47EA8 /* CreateAccountController.swift in Sources */,
 				DB7572D01A6B221200E611BE /* Alamofire.swift in Sources */,
 				DB9D5E9D1A7A0FD300848986 /* Event.swift in Sources */,
 			);

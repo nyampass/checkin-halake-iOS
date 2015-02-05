@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
         
         if (Store.account()? == nil) {
-            window?.rootViewController = StartupController()
+            window?.rootViewController = UIUtils.navigation(StartupController())
         } else {
             window?.rootViewController = self.mainController()
         }
@@ -50,9 +50,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if (!isShowCheckinAlert) {
             isShowCheckinAlert = true
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                let v = UIAlertView(title: nil, message: "チェックインしました", delegate: self, cancelButtonTitle: "OK")
+//v.show()
+
                 let alertView: FUIAlertView = SwiftBridge.createFUIAlertVIew(
-                    nil, message: "チェックインしました！ありがとうございます！",
-                    delegate: self, cancelButtonTitle: nil)
+                    "チェックイン", message: "HaLakeにチェックインしました！\nありがとうございます！",
+                    delegate: self, cancelButtonTitle: "OK")
+                UIUtils.setFUIAlertViewTheme(alertView)
+
                 alertView.show()
             })
         }
@@ -62,7 +67,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     }
 
-    
     func locationManager(manager: CLLocationManager!, didStartMonitoringForRegion region: CLRegion!) {
         manager?.requestStateForRegion(self.region)
     }
