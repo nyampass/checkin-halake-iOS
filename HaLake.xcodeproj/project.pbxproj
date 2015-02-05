@@ -149,6 +149,7 @@
 		DB559EE21A7913F000B0663D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DBD7100E1A837ED400B47EA8 /* TabBarController.swift */,
 				DB5B2E7A1A4C2978007B2094 /* StartupController.swift */,
 				DB5B2E7B1A4C2978007B2094 /* StartupController.xib */,
 				DBD710061A83381000B47EA8 /* CreateAccountController.swift */,
@@ -159,7 +160,6 @@
 				DB559EEE1A7928C200B0663D /* AccountController.swift */,
 				DB559EEF1A7928C200B0663D /* AccountController.xib */,
 				DB7572D71A6BE59A00E611BE /* SettingController.swift */,
-				DBD7100E1A837ED400B47EA8 /* TabBarController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -187,6 +187,7 @@
 		DB5B2E531A4BDC3B007B2094 /* HaLake */ = {
 			isa = PBXGroup;
 			children = (
+				DBD710041A832F7C00B47EA8 /* Settings.swift */,
 				DBA51CE91A7A063900FEB72B /* Models */,
 				DB5B2E561A4BDC3B007B2094 /* AppDelegate.swift */,
 				DB559EE21A7913F000B0663D /* Controllers */,
@@ -256,7 +257,6 @@
 				DB7572D91A6C856D00E611BE /* User.swift */,
 				DBA51CEA1A7A065200FEB72B /* Ticket.swift */,
 				DB9D5E9C1A7A0FD300848986 /* Event.swift */,
-				DBD710041A832F7C00B47EA8 /* Settings.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
