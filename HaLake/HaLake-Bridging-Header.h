@@ -10,7 +10,9 @@
 #define HaLake_HaLake_Bridging_Header_h
 
 #import "FlatUIKIt.h"
-#import "AFNetworking.h"
+#import "NSString+Icons.h"
+#import "UIBarButtonItem+FlatUI.h"
+
 #import "SwiftBridge.h"
 
 #endif
