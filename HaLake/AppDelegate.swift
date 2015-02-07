@@ -156,13 +156,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func mainController() -> UITabBarController {
-        let tabBarController = TabBarController()
-
         let tabs = NSArray(objects: UIUtils.navigation(TicketController()),
             UIUtils.navigation(EventController()),
             UIUtils.navigation(AccountController()))
-        tabBarController.setViewControllers(tabs, animated: false)
 
+        let tabBarController = TabBarController()
+        tabBarController.setViewControllers(tabs, animated: false)
         tabBarController.selectedIndex = 1
 
         return tabBarController

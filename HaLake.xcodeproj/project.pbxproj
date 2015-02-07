@@ -46,6 +46,7 @@
 		DBD7100B1A833D4000B47EA8 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBD710091A833D4000B47EA8 /* InputCell.xib */; };
 		DBD7100D1A8376DE00B47EA8 /* HaLakeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7100C1A8376DE00B47EA8 /* HaLakeAPI.swift */; };
 		DBD7100F1A837ED400B47EA8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7100E1A837ED400B47EA8 /* TabBarController.swift */; };
+		DBD710111A84A0EE00B47EA8 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD710101A84A0EE00B47EA8 /* DataUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		DBD710091A833D4000B47EA8 /* InputCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
 		DBD7100C1A8376DE00B47EA8 /* HaLakeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HaLakeAPI.swift; sourceTree = "<group>"; };
 		DBD7100E1A837ED400B47EA8 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		DBD710101A84A0EE00B47EA8 /* DataUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataUtils.swift; sourceTree = "<group>"; };
 		E175B3D3A754A7D9438A507B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 				DB8F212A1A5D28020075663D /* HaLake-Bridging-Header.h */,
 				DBA51CE31A799E8100FEB72B /* UIUtils.swift */,
 				DBD7100C1A8376DE00B47EA8 /* HaLakeAPI.swift */,
+				DBD710101A84A0EE00B47EA8 /* DataUtils.swift */,
 			);
 			path = HaLake;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				DB559EF01A7928C200B0663D /* AccountController.swift in Sources */,
 				DB5B2E571A4BDC3B007B2094 /* AppDelegate.swift in Sources */,
 				DBD710071A83381000B47EA8 /* CreateAccountController.swift in Sources */,
+				DBD710111A84A0EE00B47EA8 /* DataUtils.swift in Sources */,
 				DB7572D01A6B221200E611BE /* Alamofire.swift in Sources */,
 				DB9D5E9D1A7A0FD300848986 /* Event.swift in Sources */,
 			);

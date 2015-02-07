@@ -24,6 +24,8 @@ class Event {
     class func dic2event(dic: Dictionary<String, AnyObject>) -> Event? {
         //let date = dic["event-at"] as
         //let contentURL = dic["content-url"]
-        return Event(title: dic["title"] as String, imageURL: NSURL(), date: NSDate(), contentURL: NSURL())
+        return Event(title: dic["title"] as String, imageURL: NSURL(string: dic["image-url"] as String)!,
+            date: DataUtils.str2date(dic["event-at"] as String)!,
+            contentURL: NSURL(string: dic["content-url"] as String)!)
     }
 }
