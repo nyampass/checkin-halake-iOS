@@ -9,6 +9,8 @@
 import UIKit
 
 class EventController: UITableViewController {
+    let kCellIdentifier = "EventCell"
+    
     var events: Array<Event>?
 
     override init() {
@@ -42,18 +44,10 @@ class EventController: UITableViewController {
         tableView.registerNib(nib, forCellReuseIdentifier: "EventCell")
     }
     
-    func authentication() {
-        let (id, password) = User.authentication()
-        
-        
-    }
-    
     func setEvents(events: Array<Event>) {
         self.events = events
         tableView.reloadData()
     }
-    
-    let kCellIdentifier = "EventCell"
     
     override func viewDidAppear(animated: Bool)
     {
@@ -88,14 +82,23 @@ class EventController: UITableViewController {
     {
         if let cell: EventCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as? EventCell {
             if let event = events?[indexPath.row] {
-            cell.titleLabel.text = event.title
-            
-          //  var newBounds = cell.bounds
-          //  newBounds.size.width = tableView.bounds.width
-          //  cell.bounds = newBounds
-            
-//            cell.setNeedsLayout()
-//            cell.layoutIfNeeded()
+                
+                cell.tableView = self.tableView
+                cell.indexRow = indexPath
+                
+                cell.titleLabel.text = event.title
+                cell.dateLabel.text = DataUtils.date2str(event.date)
+                
+                request(.GET, event.imageURL).response() {
+                    (_, _, data, _) in
+                    
+                    let image = UIImage(data: data! as NSData)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) {
+                            cell.backgroundImageView?.image = image
+                        }
+                    })
+                }
             }
             
             return cell
@@ -108,4 +111,9 @@ class EventController: UITableViewController {
         return 145
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let event = events?[indexPath.row] {
+            self.navigationController?.pushViewController(WebController(url: event.contentURL), animated: true)
+        }
+    }
 }

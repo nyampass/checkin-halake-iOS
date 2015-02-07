@@ -11,16 +11,12 @@ import UIKit
 class EventCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
+    var tableView: UITableView!
+    var indexRow: NSIndexPath!
+
+    @IBAction func tapButton(sender: AnyObject) {
+        self.tableView.delegate?.tableView!(self.tableView, didSelectRowAtIndexPath: indexRow)
+    }
 }

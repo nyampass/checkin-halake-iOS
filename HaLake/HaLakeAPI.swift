@@ -30,6 +30,9 @@ class HaLakeAPI: NSObject {
                 var alertMessage: String?,
                     isSuccess: Bool = false,
                     userData: AnyObject?
+                
+                println(request)
+                println(response)
 
                 if((error) != nil) {
                     alertMessage = Props.defaultConnectErrorMessage
@@ -51,6 +54,39 @@ class HaLakeAPI: NSObject {
                 }
 
                 callback(userData: userData, alertMessage: alertMessage)
+        }
+    }
+    
+    class func events(callback: (eventsData: Array<Event>?) -> ()) {
+        let (email, password) = User.authentication()
+        let params = [
+            "email": email!,
+            "password": password!
+        ]
+
+        request(.GET, Settings.APIBaseURL + "/events", parameters: params)
+            .responseJSON {(request, response, data, error) in
+                if((error) == nil) {
+                    print(data)
+                    if let json = data as? NSDictionary {
+                        let success = json["status"] as? String
+                        let isSuccess = (success == "success")
+                        
+                        if isSuccess {
+                            var events: [Event] = []
+                            if let jsonEvents = json["events"] as? Array<Dictionary<String, AnyObject>> {
+                                for dic: Dictionary<String, AnyObject> in jsonEvents {
+                                    if let event = Event.dic2event(dic) {
+                                        events.append(event)
+                                    }
+                                }
+                            }
+                            callback(eventsData: events)
+                        }
+                    }
+                }
+                
+                callback(eventsData: nil)
         }
     }
 }

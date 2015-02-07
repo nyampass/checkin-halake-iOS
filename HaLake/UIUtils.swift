@@ -18,7 +18,7 @@ class UIUtils {
     {
         let barButtonItem = UIBarButtonItem(title: title, style: .Plain, target: target, action: action)
 
-        barButtonItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()],
+        barButtonItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.cloudsColor()],
             forState: UIControlState.Normal)
 
         return barButtonItem
@@ -48,7 +48,7 @@ class UIUtils {
     
     class func navigation(controller: UIViewController) -> UINavigationController {
         let navigation = UINavigationController(rootViewController: controller)
-        navigation.navigationBar.configureFlatNavigationBarWithColor(UIColor.cloudsColor())
+        navigation.navigationBar.configureFlatNavigationBarWithColor(UIColor.carrotColor())
 
         return navigation
     }
@@ -56,14 +56,20 @@ class UIUtils {
     class func setNavigationBar(controller: UIViewController, title: String) {
         let bar = controller.navigationController?.navigationBar
         
-        bar?.barTintColor = UIColor.cloudsColor()
+        bar?.barTintColor = UIColor.carrotColor()
 
         let titleLabel = UILabel(frame: CGRectZero)
-        // titleLabel.font = UIFont.boldSystemFontOfSize(16.0)
-        titleLabel.textColor = UIColor.asbestosColor()
+
+        titleLabel.textColor = UIColor.cloudsColor()
         titleLabel.text = title
         titleLabel.sizeToFit()
         controller.navigationItem.titleView = titleLabel
+
+        let backButton = UIBarButtonItem(title: "戻る", style: .Plain, target: nil, action: nil)
+        backButton.tintColor = UIColor.cloudsColor()
+        backButton.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()],
+            forState: UIControlState.Normal)
+        controller.navigationItem.backBarButtonItem = backButton
     }
 
     class func showActivityIndicator(uiView: UIView) {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28E93EE76F5798F71D527B55 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E175B3D3A754A7D9438A507B /* libPods.a */; };
+		DB2F4B391A85F74700D5C373 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2F4B381A85F74700D5C373 /* WebController.swift */; };
 		DB32202A1A81DB9800643606 /* SwiftBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3220291A81DB9800643606 /* SwiftBridge.m */; };
 		DB559EE51A7914A500B0663D /* TicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB559EE31A7914A500B0663D /* TicketController.swift */; };
 		DB559EE71A7914AB00B0663D /* TicketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB559EE41A7914A500B0663D /* TicketController.xib */; };
@@ -25,7 +26,6 @@
 		DB5B2E7D1A4C2978007B2094 /* StartupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB5B2E7B1A4C2978007B2094 /* StartupController.xib */; };
 		DB7572D01A6B221200E611BE /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7572CF1A6B221200E611BE /* Alamofire.swift */; };
 		DB7572D51A6BE56900E611BE /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7572D31A6BE56900E611BE /* EventController.swift */; };
-		DB7572D61A6BE56900E611BE /* EventController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7572D41A6BE56900E611BE /* EventController.xib */; };
 		DB7572D81A6BE59A00E611BE /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7572D71A6BE59A00E611BE /* SettingController.swift */; };
 		DB7572DA1A6C856D00E611BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7572D91A6C856D00E611BE /* User.swift */; };
 		DB856D821A7EE8CA0073C8AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB856D811A7EE8CA0073C8AB /* CoreLocation.framework */; };
@@ -62,6 +62,7 @@
 /* Begin PBXFileReference section */
 		6EDC750089BF00DE867DC384 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BBA807AFE53DC0AA9ECD125D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		DB2F4B381A85F74700D5C373 /* WebController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		DB3220281A81DB9800643606 /* SwiftBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftBridge.h; sourceTree = "<group>"; };
 		DB3220291A81DB9800643606 /* SwiftBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftBridge.m; sourceTree = "<group>"; };
 		DB559EE31A7914A500B0663D /* TicketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketController.swift; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		DB5B2E7B1A4C2978007B2094 /* StartupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartupController.xib; sourceTree = "<group>"; };
 		DB7572CF1A6B221200E611BE /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		DB7572D31A6BE56900E611BE /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
-		DB7572D41A6BE56900E611BE /* EventController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventController.xib; sourceTree = "<group>"; };
 		DB7572D71A6BE59A00E611BE /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		DB7572D91A6C856D00E611BE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DB856D811A7EE8CA0073C8AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -156,12 +156,12 @@
 				DB5B2E7B1A4C2978007B2094 /* StartupController.xib */,
 				DBD710061A83381000B47EA8 /* CreateAccountController.swift */,
 				DB7572D31A6BE56900E611BE /* EventController.swift */,
-				DB7572D41A6BE56900E611BE /* EventController.xib */,
 				DB559EE31A7914A500B0663D /* TicketController.swift */,
 				DB559EE41A7914A500B0663D /* TicketController.xib */,
 				DB559EEE1A7928C200B0663D /* AccountController.swift */,
 				DB559EEF1A7928C200B0663D /* AccountController.xib */,
 				DB7572D71A6BE59A00E611BE /* SettingController.swift */,
+				DB2F4B381A85F74700D5C373 /* WebController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -353,7 +353,6 @@
 				DB5B2E7D1A4C2978007B2094 /* StartupController.xib in Resources */,
 				DB559EED1A791E4000B0663D /* tabbar_ticket@2x.png in Resources */,
 				DB9D5EA31A7A175400848986 /* event_background@2x.png in Resources */,
-				DB7572D61A6BE56900E611BE /* EventController.xib in Resources */,
 				DB9D5EA11A7A11D800848986 /* EventCell.xib in Resources */,
 				DB5B2E651A4BDC3B007B2094 /* LaunchScreen.xib in Resources */,
 				DB8F21271A5BD9200075663D /* background@2x.png in Resources */,
@@ -430,6 +429,7 @@
 				DB559EF01A7928C200B0663D /* AccountController.swift in Sources */,
 				DB5B2E571A4BDC3B007B2094 /* AppDelegate.swift in Sources */,
 				DBD710071A83381000B47EA8 /* CreateAccountController.swift in Sources */,
+				DB2F4B391A85F74700D5C373 /* WebController.swift in Sources */,
 				DBD710111A84A0EE00B47EA8 /* DataUtils.swift in Sources */,
 				DB7572D01A6B221200E611BE /* Alamofire.swift in Sources */,
 				DB9D5E9D1A7A0FD300848986 /* Event.swift in Sources */,
@@ -549,7 +549,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HaLake/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/HaLake-Bridging-Header.h";
@@ -562,7 +562,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HaLake/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/HaLake-Bridging-Header.h";

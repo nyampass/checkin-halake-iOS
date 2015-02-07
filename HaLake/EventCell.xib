@@ -15,15 +15,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inside_halake.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8tn-yp-fCS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8tn-yp-fCS">
+                        <rect key="frame" x="0.0" y="1" width="320" height="145"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="event_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="snY-Dp-Hkp">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="event_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="snY-Dp-Hkp">
                         <rect key="frame" x="0.0" y="-36" width="320" height="180"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hw-4B-EmD">
-                        <rect key="frame" x="139" y="98" width="173" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hw-4B-EmD">
+                        <rect key="frame" x="139" y="99" width="173" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="173" id="f7Y-on-VUe"/>
                         </constraints>
@@ -31,25 +31,38 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rl9-uu-lBN">
-                        <rect key="frame" x="8" y="117" width="304" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rl9-uu-lBN">
+                        <rect key="frame" x="8" y="118" width="304" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="gLZ-Mq-3dx"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ll0-FP-gmg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="tapButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2ky-Zm-KdX"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="8tn-yp-fCS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="12w-k5-O4H"/>
+                    <constraint firstItem="ll0-FP-gmg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="1Qv-eG-XxI"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ll0-FP-gmg" secondAttribute="trailing" constant="-8" id="1SW-DJ-qx7"/>
                     <constraint firstItem="rl9-uu-lBN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="1yf-M3-8QC"/>
                     <constraint firstAttribute="trailingMargin" secondItem="8tn-yp-fCS" secondAttribute="trailing" constant="-8" id="33S-gu-05X"/>
+                    <constraint firstItem="ll0-FP-gmg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="7aV-Bf-BSZ"/>
                     <constraint firstItem="rl9-uu-lBN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="7m0-en-YSt"/>
                     <constraint firstAttribute="trailingMargin" secondItem="snY-Dp-Hkp" secondAttribute="trailing" constant="-8" id="KoW-LZ-PpT"/>
                     <constraint firstAttribute="bottomMargin" secondItem="rl9-uu-lBN" secondAttribute="bottom" constant="-2" id="UWO-5e-uUU"/>
                     <constraint firstItem="8Hw-4B-EmD" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="WdG-X7-9kP"/>
                     <constraint firstItem="snY-Dp-Hkp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="g7s-fT-0cP"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ll0-FP-gmg" secondAttribute="bottom" constant="-9" id="h50-7u-bpq"/>
                     <constraint firstAttribute="bottomMargin" secondItem="snY-Dp-Hkp" secondAttribute="bottom" constant="-8" id="hkn-X7-vxe"/>
                     <constraint firstAttribute="bottomMargin" secondItem="8tn-yp-fCS" secondAttribute="bottom" constant="-9" id="kUC-Vg-196"/>
                     <constraint firstItem="8tn-yp-fCS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="mOr-Hn-9lO"/>
@@ -57,6 +70,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="backgroundImageView" destination="8tn-yp-fCS" id="jHc-9j-EuT"/>
                 <outlet property="dateLabel" destination="8Hw-4B-EmD" id="jCL-ez-EFi"/>
                 <outlet property="titleLabel" destination="rl9-uu-lBN" id="H9b-9y-Dy2"/>
             </connections>
@@ -65,6 +79,5 @@
     </objects>
     <resources>
         <image name="event_background.png" width="320" height="140"/>
-        <image name="inside_halake.jpg" width="320" height="145"/>
     </resources>
 </document>
