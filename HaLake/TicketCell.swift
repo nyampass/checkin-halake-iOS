@@ -16,16 +16,24 @@ class TicketCell: UITableViewCell
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var ticketView: UIView!
-
-    override init(style: UITableViewCellStyle, reuseIdentifier: String!)
-    {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
+    @IBOutlet weak var useButton: FUIButton!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        useButton.buttonColor = UIColor.sunflowerColor()
+        useButton.shadowColor = UIColor.orangeColor()
+        useButton.shadowHeight = 1.5
+        useButton.cornerRadius = 2.0
+        
+        useButton.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
+        useButton.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
+    }
+/*
     required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }
     
-    
+  */
 }

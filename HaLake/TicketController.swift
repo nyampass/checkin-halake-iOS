@@ -38,8 +38,8 @@ class TicketController: UITableViewController {
         var nib  = UINib(nibName: "TicketCell", bundle:nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "TicketCell")
       
-        tableView.backgroundColor = UIColor.cloudsColor()
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.backgroundColor = UIColor.pumpkinColor()
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLineEtched
 
     }
     

@@ -16,7 +16,7 @@
                         <rect key="frame" x="4" y="4" width="312" height="54"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="218" placeholderIntrinsicHeight="21" text="有効期限: ----/--/--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPL-k4-Vj9">
-                                <rect key="frame" x="58" y="29" width="244" height="21"/>
+                                <rect key="frame" x="58" y="27" width="244" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -25,11 +25,19 @@
                                 <rect key="frame" x="13" y="13" width="30" height="30"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GV2-Nn-OxU">
-                                <rect key="frame" x="58" y="11" width="240" height="21"/>
+                                <rect key="frame" x="58" y="9" width="240" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBk-b6-aEC" customClass="FUIButton">
+                                <rect key="frame" x="226" y="12" width="78" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="使う">
+                                    <color key="titleColor" red="0.8469983834" green="0.99010003310000005" blue="0.39089373779999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -43,8 +51,9 @@
                 <outlet property="subTitleLabel" destination="TPL-k4-Vj9" id="AAQ-XN-tqh"/>
                 <outlet property="ticketView" destination="fy8-nS-wjd" id="2du-kr-Kuj"/>
                 <outlet property="titleLabel" destination="GV2-Nn-OxU" id="RXk-P6-809"/>
+                <outlet property="useButton" destination="eBk-b6-aEC" id="gop-4e-e9m"/>
             </connections>
-            <point key="canvasLocation" x="255" y="212.5"/>
+            <point key="canvasLocation" x="205" y="212.5"/>
         </tableViewCell>
     </objects>
     <resources>
