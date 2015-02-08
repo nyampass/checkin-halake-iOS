@@ -21,6 +21,11 @@ class TabBarController: UITabBarController {
 
             let controllers = self.viewControllers!
             
+            let user: User = User.dic2user(userData!)
+            let accountController = (controllers[2] as UINavigationController).viewControllers[0]
+                as AccountController
+            accountController.setUser(user)
+
             println(userData)
 
             if let ticketObj = userData?["tickets"] as? Dictionary<String, AnyObject> {
