@@ -1,78 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" restorationIdentifier="TicketCell" selectionStyle="default" indentationWidth="10" rowHeight="59" id="o7S-ma-lOQ" customClass="TicketCell" customModule="HaLake" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="TicketCell" selectionStyle="none" indentationWidth="10" rowHeight="63" id="o7S-ma-lOQ" customClass="TicketCell" customModule="HaLake" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o7S-ma-lOQ" id="Vls-6C-VzQ">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2KJ-5Y-fAk">
-                        <rect key="frame" x="8" y="3" width="304" height="51"/>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fy8-nS-wjd">
+                        <rect key="frame" x="4" y="4" width="312" height="54"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPf-A6-iyO">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="51"/>
-                                <color key="backgroundColor" red="1" green="0.80422556492883535" blue="0.3062261181832997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="PYs-NC-RAc"/>
-                                </constraints>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_coffee.png" translatesAutoresizingMaskIntoConstraints="NO" id="rVf-ul-fI1">
-                                <rect key="frame" x="10" y="11" width="30" height="30"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sq-t6-6wW">
-                                <rect key="frame" x="58" y="9" width="241" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="218" placeholderIntrinsicHeight="21" text="有効期限: ----/--/--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPL-k4-Vj9">
+                                <rect key="frame" x="58" y="29" width="244" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="218" placeholderIntrinsicHeight="21" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPL-k4-Vj9">
-                                <rect key="frame" x="81" y="28" width="218" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_ticket_pc.png" translatesAutoresizingMaskIntoConstraints="NO" id="RNG-Vg-CtZ">
+                                <rect key="frame" x="13" y="13" width="30" height="30"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GV2-Nn-OxU">
+                                <rect key="frame" x="58" y="11" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="rVf-ul-fI1" secondAttribute="centerY" id="29f-t4-4M6"/>
-                            <constraint firstAttribute="trailing" secondItem="4sq-t6-6wW" secondAttribute="trailing" constant="5" id="2gx-XF-WMF"/>
-                            <constraint firstItem="TPf-A6-iyO" firstAttribute="top" secondItem="2KJ-5Y-fAk" secondAttribute="top" id="3pt-jd-c47"/>
-                            <constraint firstItem="4sq-t6-6wW" firstAttribute="top" secondItem="2KJ-5Y-fAk" secondAttribute="top" constant="9" id="GXJ-FD-VOl"/>
-                            <constraint firstItem="4sq-t6-6wW" firstAttribute="leading" secondItem="TPf-A6-iyO" secondAttribute="trailing" constant="8" id="HXo-T0-IiI"/>
-                            <constraint firstAttribute="bottom" secondItem="TPL-k4-Vj9" secondAttribute="bottom" constant="2" id="JrF-D6-dEH"/>
-                            <constraint firstItem="TPf-A6-iyO" firstAttribute="leading" secondItem="2KJ-5Y-fAk" secondAttribute="leading" id="MtB-6c-ljf"/>
-                            <constraint firstAttribute="trailing" secondItem="TPL-k4-Vj9" secondAttribute="trailing" constant="5" id="Nwy-Fq-Rem"/>
-                            <constraint firstItem="rVf-ul-fI1" firstAttribute="leading" secondItem="2KJ-5Y-fAk" secondAttribute="leading" constant="10" id="Yh5-aw-Ipj"/>
-                            <constraint firstAttribute="bottom" secondItem="TPf-A6-iyO" secondAttribute="bottom" id="YzY-7k-Blt"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="0.95061188811188813" alpha="1" colorSpace="calibratedWhite"/>
-                <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="2KJ-5Y-fAk" secondAttribute="bottom" constant="-4" id="Emd-Fi-k3d"/>
-                    <constraint firstItem="2KJ-5Y-fAk" firstAttribute="top" secondItem="Vls-6C-VzQ" secondAttribute="topMargin" constant="-5" id="idP-gS-2zM"/>
-                    <constraint firstItem="2KJ-5Y-fAk" firstAttribute="leading" secondItem="Vls-6C-VzQ" secondAttribute="leadingMargin" id="lkO-It-9t9"/>
-                    <constraint firstItem="2KJ-5Y-fAk" firstAttribute="trailing" secondItem="Vls-6C-VzQ" secondAttribute="trailingMargin" id="vrE-2A-AU2"/>
-                </constraints>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="ticketView" destination="2KJ-5Y-fAk" id="7fb-ef-C9R"/>
-                <outlet property="titleLabel" destination="4sq-t6-6wW" id="Veb-ob-1c6"/>
+                <outlet property="subTitleLabel" destination="TPL-k4-Vj9" id="AAQ-XN-tqh"/>
+                <outlet property="ticketView" destination="fy8-nS-wjd" id="2du-kr-Kuj"/>
+                <outlet property="titleLabel" destination="GV2-Nn-OxU" id="RXk-P6-809"/>
             </connections>
-            <point key="canvasLocation" x="255" y="210.5"/>
+            <point key="canvasLocation" x="255" y="212.5"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icon_coffee.png" width="30" height="30"/>
+        <image name="icon_ticket_pc.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

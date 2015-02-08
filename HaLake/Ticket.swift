@@ -8,19 +8,36 @@
 
 import Foundation
 
-struct Ticket {
+class Ticket {
     var id: String
     var name: String
-    var rest: Int
-    var imageURL: NSURL
-    var note: String
     
-    init(id: String, name: String, rest: Int, imageURL: NSURL, note: String)
+    init(id: String, name: String)
     {
         self.id = id
         self.name = name
-        self.rest = rest
-        self.imageURL = imageURL
-        self.note = note
+    }
+    
+    class func id2name(id: String) -> String {
+        switch (id) {
+            case "1day":
+                return "HaLake 1日利用"
+        default:
+                return id
+        }
+    }
+
+    class func dic2tickets(dic: Dictionary<String, AnyObject>) -> Array<Ticket> {
+        println(dic)
+        var tickets = Array<Ticket>()
+        for (id, countData) in dic {
+            if let count = countData as? Int {
+                for i in 0..<count {
+                    tickets.append(Ticket(id: id, name: id2name(id)))
+                }
+            }
+        }
+        
+        return tickets
     }
 }

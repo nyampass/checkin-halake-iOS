@@ -14,6 +14,7 @@ import UIKit
 class TicketCell: UITableViewCell
 {
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var ticketView: UIView!
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String!)
@@ -25,4 +26,6 @@ class TicketCell: UITableViewCell
     {
         super.init(coder: aDecoder)
     }
+    
+    
 }
