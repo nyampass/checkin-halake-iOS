@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountController" customModule="HaLake" customModuleProvider="target">
             <connections>
+                <outlet property="profileTableView" destination="mrT-rT-KqR" id="8w2-R9-GXg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,13 +15,27 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="inside_halake.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NgE-wq-KbL">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="inside_halake.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NgE-wq-KbL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                 </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="mrT-rT-KqR">
+                    <rect key="frame" x="0.0" y="96" width="375" height="569"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                </tableView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="NgE-wq-KbL" secondAttribute="trailing" id="4bn-HN-T0i"/>
+                <constraint firstAttribute="bottom" secondItem="mrT-rT-KqR" secondAttribute="bottom" constant="2" id="50H-Go-Nz9"/>
+                <constraint firstItem="NgE-wq-KbL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DfX-8P-IpX"/>
+                <constraint firstItem="mrT-rT-KqR" firstAttribute="top" secondItem="NgE-wq-KbL" secondAttribute="bottom" constant="2" id="Yuk-om-g5V"/>
+                <constraint firstItem="NgE-wq-KbL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eIv-1V-8fH"/>
+                <constraint firstItem="mrT-rT-KqR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qhq-Wv-79n"/>
+                <constraint firstAttribute="centerX" secondItem="NgE-wq-KbL" secondAttribute="centerX" id="vOb-Fn-JG5"/>
+                <constraint firstAttribute="trailing" secondItem="mrT-rT-KqR" secondAttribute="trailing" id="xgj-2m-Ipc"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="305" y="383"/>
+            <point key="canvasLocation" x="304.5" y="384.5"/>
         </view>
     </objects>
     <resources>

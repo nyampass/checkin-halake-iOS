@@ -31,6 +31,7 @@
 		DB856D821A7EE8CA0073C8AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB856D811A7EE8CA0073C8AB /* CoreLocation.framework */; };
 		DB8F21231A5BD3520075663D /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8F21221A5BD3520075663D /* logo@2x.png */; };
 		DB8F21271A5BD9200075663D /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8F21261A5BD9200075663D /* background@2x.png */; };
+		DB9579CB1A8794FF00C16945 /* TitleAndSubTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9579CA1A8794FF00C16945 /* TitleAndSubTitleCell.swift */; };
 		DB9D5E9D1A7A0FD300848986 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D5E9C1A7A0FD300848986 /* Event.swift */; };
 		DB9D5EA01A7A11D800848986 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D5E9E1A7A11D800848986 /* EventCell.swift */; };
 		DB9D5EA11A7A11D800848986 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB9D5E9F1A7A11D800848986 /* EventCell.xib */; };
@@ -92,6 +93,7 @@
 		DB8F21221A5BD3520075663D /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		DB8F21261A5BD9200075663D /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		DB8F212A1A5D28020075663D /* HaLake-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HaLake-Bridging-Header.h"; sourceTree = "<group>"; };
+		DB9579CA1A8794FF00C16945 /* TitleAndSubTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleAndSubTitleCell.swift; sourceTree = "<group>"; };
 		DB9D5E9C1A7A0FD300848986 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DB9D5E9E1A7A11D800848986 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		DB9D5E9F1A7A11D800848986 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
@@ -150,13 +152,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		DB559EE21A7913F000B0663D /* Controllers */ = {
+		DB2586D91A871922005FEA11 /* Account Co */ = {
 			isa = PBXGroup;
 			children = (
-				DBD7100E1A837ED400B47EA8 /* TabBarController.swift */,
+			);
+			name = "Account Co";
+			sourceTree = "<group>";
+		};
+		DB2586DA1A871931005FEA11 /* Authentication Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				DB5B2E7A1A4C2978007B2094 /* StartupController.swift */,
 				DB5B2E7B1A4C2978007B2094 /* StartupController.xib */,
 				DBD710061A83381000B47EA8 /* CreateAccountController.swift */,
+			);
+			name = "Authentication Controllers";
+			sourceTree = "<group>";
+		};
+		DB559EE21A7913F000B0663D /* Main Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DBD7100E1A837ED400B47EA8 /* TabBarController.swift */,
 				DB7572D31A6BE56900E611BE /* EventController.swift */,
 				DB559EE31A7914A500B0663D /* TicketController.swift */,
 				DB559EEE1A7928C200B0663D /* AccountController.swift */,
@@ -164,7 +180,7 @@
 				DB7572D71A6BE59A00E611BE /* SettingController.swift */,
 				DB2F4B381A85F74700D5C373 /* WebController.swift */,
 			);
-			name = Controllers;
+			name = "Main Controllers";
 			sourceTree = "<group>";
 		};
 		DB5B2E481A4BDC3B007B2094 = {
@@ -190,10 +206,12 @@
 		DB5B2E531A4BDC3B007B2094 /* HaLake */ = {
 			isa = PBXGroup;
 			children = (
+				DB2586D91A871922005FEA11 /* Account Co */,
 				DBD710041A832F7C00B47EA8 /* Settings.swift */,
 				DBA51CE91A7A063900FEB72B /* Models */,
 				DB5B2E561A4BDC3B007B2094 /* AppDelegate.swift */,
-				DB559EE21A7913F000B0663D /* Controllers */,
+				DB2586DA1A871931005FEA11 /* Authentication Controllers */,
+				DB559EE21A7913F000B0663D /* Main Controllers */,
 				DB9D5E9B1A7A09EC00848986 /* Cells */,
 				DB5B2E611A4BDC3B007B2094 /* Images.xcassets */,
 				DB5B2E631A4BDC3B007B2094 /* LaunchScreen.xib */,
@@ -253,6 +271,7 @@
 				DBA51CE71A7A050E00FEB72B /* TicketCell.xib */,
 				DB9D5E9E1A7A11D800848986 /* EventCell.swift */,
 				DB9D5E9F1A7A11D800848986 /* EventCell.xib */,
+				DB9579CA1A8794FF00C16945 /* TitleAndSubTitleCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -432,6 +451,7 @@
 				DBD7100D1A8376DE00B47EA8 /* HaLakeAPI.swift in Sources */,
 				DB559EF01A7928C200B0663D /* AccountController.swift in Sources */,
 				DB5B2E571A4BDC3B007B2094 /* AppDelegate.swift in Sources */,
+				DB9579CB1A8794FF00C16945 /* TitleAndSubTitleCell.swift in Sources */,
 				DBD710071A83381000B47EA8 /* CreateAccountController.swift in Sources */,
 				DB2F4B391A85F74700D5C373 /* WebController.swift in Sources */,
 				DBD710111A84A0EE00B47EA8 /* DataUtils.swift in Sources */,
