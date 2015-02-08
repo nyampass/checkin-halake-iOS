@@ -26,8 +26,7 @@ class Event {
         let imageURL =  NSURL(string: dic["image-url"] as String)!
         let date = DataUtils.str2date(dic["event-at"] as String)!
         let contentURL = NSURL(string: dic["content-url"] as String)!
-        //let date = dic["event-at"] as
-        //let contentURL = dic["content-url"]
+
         return Event(title: title, imageURL: imageURL,
             date: date,
             contentURL: contentURL)

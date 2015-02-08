@@ -9,6 +9,8 @@
 import UIKit
 
 class TicketController: UITableViewController {
+    var tickets: Array<Ticket> = Array()
+    
     override init() {
         super.init()
     
@@ -35,20 +37,16 @@ class TicketController: UITableViewController {
 
         var nib  = UINib(nibName: "TicketCell", bundle:nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "TicketCell")
-
-        //tableView.rowHeight = UITableViewAutomaticDimension
-        //tableView.estimatedRowHeight = 58.0
-        
-        tableView.backgroundColor = UIUtils.UIColorFromHex(0xf2f2f2)
-        tableView.separatorColor = UIColor.whiteColor()
+      
+        tableView.backgroundColor = UIColor.cloudsColor()
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
 
-        addRow()
-        addRow()
-        addRow()
-        addRow()
     }
-
+    
+    func setTickets(tickets: Array<Ticket>) {
+        self.tickets = tickets
+        tableView.reloadData()
+    }
     
     let kCellIdentifier = "TicketCell"
     
@@ -71,43 +69,36 @@ class TicketController: UITableViewController {
         tableView.reloadData()
     }
     
-    // Deletes all rows in the table view and replaces the model with a new empty one
-
-    func addRow()
-    {
-        addSingleItem()
-        
-        let lastIndexPath = NSIndexPath(forRow: dataArray.count - 1, inSection: 0)
-        tableView.insertRowsAtIndexPaths([lastIndexPath], withRowAnimation: .Automatic)
-    }
-    
-    var dataArray: Array<(title:String, body:String)> = Array()
-
-    func addSingleItem()
-    {
-        let data = (title: "hoge", body: "asdf")
-        dataArray.append(data)
-    }
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        return dataArray.count
+        return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 1
+        return tickets.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         if let cell: TicketCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as? TicketCell {
-            let modelItem = dataArray[indexPath.section]
-            cell.titleLabel.text = "hogehoge"
+            cell.configureFlatCellWithColor(UIColor.whiteColor(), selectedColor: UIColor.cloudsColor(),
+                roundingCorners: .AllCorners)
             
-            let corners = UIRectCorner.AllCorners
-            cell.ticketView.layer.cornerRadius = 3.0 // optional
-            cell.ticketView.layer.masksToBounds = true
+            let ticketView = cell.ticketView
+            ticketView.frame = cell.contentView.bounds
+            ticketView.layer.masksToBounds = true
+            ticketView.layer.cornerRadius = 3.0
+            ticketView.layer.shadowOffset = CGSizeMake(1, 1)
+            ticketView.layer.shadowOpacity = 0.5
+            
+            cell.contentView.backgroundColor = UIColor.clearColor()
+
+            let ticket = tickets[indexPath.section]
+            cell.titleLabel.text = ticket.name
+
+            cell.cornerRadius = 5.0
+            cell.separatorHeight = 1.0
             
             return cell
         }
@@ -117,5 +108,12 @@ class TicketController: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 59
+    }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let alertView = UIUtils.alertView(nil, message: "チェックインしました！",
+            delegate: nil, cancelButtonTitle: "OK")
+        alertView.show()
     }
 }

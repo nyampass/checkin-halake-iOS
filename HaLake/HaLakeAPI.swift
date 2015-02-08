@@ -18,7 +18,7 @@ class HaLakeAPI: NSObject {
         static let defaultConnectErrorMessage = "接続に失敗しました。接続環境を確認の上再度お試し下さい"
     }
     
-    class func login(email: String, password: String, callback: (userData: AnyObject?, alertMessage: String!) -> ()) {
+    class func login(email: String, password: String, callback: (userData: Dictionary<String, AnyObject>?, alertMessage: String!) -> ()) {
         var params = [
             "email": email,
             "password": password
@@ -29,22 +29,20 @@ class HaLakeAPI: NSObject {
             .responseJSON {(request, response, data, error) in
                 var alertMessage: String?,
                     isSuccess: Bool = false,
-                    userData: AnyObject?
+                    userData: Dictionary<String, AnyObject>?
                 
-                println(request)
-                println(response)
-
                 if((error) != nil) {
                     alertMessage = Props.defaultConnectErrorMessage
+
                 } else {
-                    println(response)
-                    println(data)
                     if let json = data as? NSDictionary {
                         let success = json["status"] as? String
                         isSuccess = (success == "success")
                         
                         if isSuccess {
-                            userData = json["user"]
+                            if let userJson: Dictionary<String, AnyObject> = json["user"] as? Dictionary<String, AnyObject> {
+                                userData = userJson
+                            }
                         } else {
                             alertMessage = json["reason"] as? String
                         }

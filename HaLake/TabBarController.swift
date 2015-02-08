@@ -18,13 +18,25 @@ class TabBarController: UITabBarController {
         let (id, password) = User.authentication()
         HaLakeAPI.login(id!, password: password!) { (userData, alertMessage) -> () in
             UIUtils.hideActivityIndicator(self.view)
+
+            let controllers = self.viewControllers!
+            
+            println(userData)
+
+            if let ticketObj = userData?["tickets"] as? Dictionary<String, AnyObject> {
+                println(ticketObj)
+                let ticketController = (controllers[0] as UINavigationController).viewControllers[0]
+                        as TicketController
+                ticketController.setTickets(Ticket.dic2tickets(ticketObj))
+            }
             
             if (alertMessage != nil) {
                 UIApplication.sharedApplication().delegate?.window!?.rootViewController = StartupController()
             } else {
                 HaLakeAPI.events({ (eventsData) -> () in
                     if eventsData != nil {
-                        let eventController = self.viewControllers![1] as EventController
+                        let eventController = (controllers[1] as UINavigationController).viewControllers[0]
+                            as EventController
                         eventController.setEvents(eventsData!)
                     }
                 })

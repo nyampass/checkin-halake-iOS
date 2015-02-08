@@ -88,48 +88,25 @@ class StartupController: UIViewController, UITextFieldDelegate, UIPopoverControl
     @IBAction func tapLogin(sender: AnyObject) {
         UIUtils.showActivityIndicator(self.view)
         
-        var params = [
-            "email": emailTextField.text!,
-            "password":passwordTextField.text!
-        ]
-        
-        var headers: [NSObject : AnyObject] = ["X-HaLake-Key": Settings.APIHeadersKey]
-        Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = headers
-        
-        request(.POST, Settings.APIBaseURL + "/login", parameters: params)
-            .responseJSON {(request, response, data, error) in
-                var alertMessage: String? = nil
-                if((error) != nil) {
-                    alertMessage = "接続に失敗しました。接続環境を確認の上再度お試し下さい"
-                } else {
-                    var isSuccess: Bool = false
-                    if let json = data as? NSDictionary {
-                        let success = json["status"] as? String
-                        isSuccess = (success == "success")
-                    
-                        if (isSuccess) {
-                            let id = json["user"]?["_id"]? as String
-                            User.saveAuthentication(id, password: params["password"]!)
-                            
-                            let delegate = UIApplication.sharedApplication().delegate as AppDelegate
-                            delegate.window?.rootViewController = delegate.mainController()
-                            return
-                        }
-                        alertMessage = json["reason"] as? String
-                    }
-                    
-                }
-
-                dispatch_async(dispatch_get_main_queue(), {
-                    UIUtils.hideActivityIndicator(self.view)
-
+        HaLakeAPI.login(emailTextField.text, password: passwordTextField.text) { (data, alertMessage) -> () in
+            dispatch_async(dispatch_get_main_queue(), {
+                UIUtils.hideActivityIndicator(self.view)
+                
+                if (alertMessage != nil) {
                     let alert = UIAlertView()
-
+                    
                     alert.message = alertMessage
                     alert.addButtonWithTitle("OK")
-
+                    
                     alert.show()
-                })
+                    return;
+                }
+                User.saveAuthentication(self.emailTextField.text,
+                    password: self.passwordTextField.text)
+
+                let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+                delegate.window?.rootViewController = delegate.mainController()
+            })
         }
     }
 

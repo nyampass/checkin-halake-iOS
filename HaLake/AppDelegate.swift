@@ -135,8 +135,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             self.manager?.startRangingBeaconsInRegion(self.region)
 
         case .NotDetermined:
-            
-            if(NSProcessInfo().operatingSystemVersion.majorVersion >= 8) {
+            if (NSProcessInfo().respondsToSelector("operatingSystemVersion") &&
+                    NSProcessInfo().operatingSystemVersion.majorVersion >= 8) {
                 self.manager?.requestAlwaysAuthorization()
             }else{
                 self.manager?.startRangingBeaconsInRegion(self.region)
