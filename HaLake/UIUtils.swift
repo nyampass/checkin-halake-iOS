@@ -39,6 +39,18 @@ class UIUtils {
         alertView.defaultButtonTitleColor = UIColor.asbestosColor()
     }
     
+    class func addButtonToAlertView(alertView: FUIAlertView, title: String) {
+        alertView.addButtonWithTitle(title)
+        
+        let button: FUIButton = alertView.buttons[alertView.buttons.count - 1] as FUIButton
+        
+        button.buttonColor = UIColor.whiteColor()
+        button.shadowColor = alertView.defaultButtonShadowColor
+        button.titleLabel?.font = alertView.defaultButtonFont
+        button.setTitleColor(UIColor.midnightBlueColor(),
+            forState: UIControlState.Normal & UIControlState.Highlighted)
+    }
+    
     class func alertView(title: String?, message: String?, delegate:FUIAlertViewDelegate?, cancelButtonTitle: String?) -> FUIAlertView {
         let alert = SwiftBridge.createFUIAlertVIew(title, message: message, delegate: delegate, cancelButtonTitle: cancelButtonTitle)
         setAlertViewTheme(alert)
