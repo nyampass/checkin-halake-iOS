@@ -43,4 +43,41 @@ class User {
         user.phone = dic["phone"] as? String
         return user
     }
+    
+    class func isTodaysCheckin() -> Bool {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let checkinAt = userDefaults.objectForKey("checkinAt") as? NSDate
+        
+        if checkinAt == nil {
+            return false
+        }
+        
+        if DataUtils.isToday(checkinAt!) {
+            return true
+        }
+        
+        return false
+    }
+    
+    class func checkin() {
+        HaLakeAPI.checkin { (isSuccess) -> () in
+            self.saveCheckinStatus(true)
+        }
+    }
+    
+    class func checkout() {
+        HaLakeAPI.checkin { (isSuccess) -> () in
+            self.saveCheckinStatus(false)
+        }
+    }
+    
+    class func saveCheckinStatus(isCheckin: Bool) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if isCheckin {
+            userDefaults.setObject(NSDate(), forKey: "checkinAt")
+        } else {
+            userDefaults.setObject(nil, forKey: "checkinAt")
+        }
+        userDefaults.synchronize()
+    }
 }

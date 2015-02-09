@@ -35,4 +35,16 @@ class DataUtils: NSObject {
         date_formatter.dateFormat = "yyyy/M/d(\(weekdays[comps.weekday])) HH:mm"
         return date_formatter.stringFromDate(date)
     }
+    
+    class func localDays(date: NSDate) -> Int {
+        return Int(date.dateByAddingTimeInterval(Double(NSTimeZone.systemTimeZone().secondsFromGMT)).timeIntervalSince1970 / 86400)
+    }
+    
+    class func isToday(date: NSDate) -> Bool {
+        let days = localDays(date)
+        let todayDays = localDays(NSDate())
+        
+        return days == todayDays
+    }
+
 }

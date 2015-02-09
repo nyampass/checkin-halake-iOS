@@ -45,15 +45,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     var latestCheckin: NSDate!
     let waitLatestCheckinInterval = 60.0 // sec
-
+    var isShowingAlert = false
+    
+    let alertViewTagCheckin = 1,
+        alertViewTagConfirmCheckout = 2
+    
     func checkin()
     {
         if !User.isValidAuthentication() {
             return
         }
         
-        if (latestCheckin != nil) {
-            println(latestCheckin!.timeIntervalSinceNow )
+        if isShowingAlert {
+            return
         }
         
         if (latestCheckin == nil ||
@@ -61,15 +65,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             latestCheckin = NSDate()
 
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let alertView = UIUtils.alertView(nil,
-                    message: "HaLakeにチェックインしました！\nありがとうございます！",
-                    delegate: nil, cancelButtonTitle: "OK")
-                alertView.show()
+                let isAlreadyCheckin = User.isTodaysCheckin()
+                
+                if (!isAlreadyCheckin) {
+                    let alertView = UIUtils.alertView(nil,
+                        message: "HaLakeにチェックインしました！\nありがとうございます！",
+                        delegate: self, cancelButtonTitle: "OK")
+                    alertView.tag = self.alertViewTagCheckin
+                    
+                    self.isShowingAlert = true
+                    
+                    alertView.show()
+                    
+                    User.checkin()
+
+                } else {
+                    let alertView = UIUtils.alertView(nil,
+                        message: "HaLakeからチェックアウトしますか？",
+                        delegate: self, cancelButtonTitle: "キャンセル")
+                    UIUtils.addButtonToAlertView(alertView, title: "チェックアウト")
+                    alertView.tag = self.alertViewTagConfirmCheckout
+
+                    self.isShowingAlert = true
+
+                    alertView.show()
+                }
             })
         }
     }
     
     func alertView(alertView: FUIAlertView!, clickedButtonAtIndex buttonIndex: Int) {
+        isShowingAlert = false
+        if alertView.tag == alertViewTagConfirmCheckout &&
+                buttonIndex == 1{
+            User.checkout()
+        }
     }
 
     func locationManager(manager: CLLocationManager!, didStartMonitoringForRegion region: CLRegion!) {

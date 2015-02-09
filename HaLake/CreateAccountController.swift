@@ -1,5 +1,5 @@
 //
-//  CreateAccountController.swift
+//  CreateProfileController.swift
 //  HaLake
 //
 //  Created by Tokusei Noborio on 2015/02/05.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateAccountController: UITableViewController {
+class CreateProfileController: UITableViewController {
     var nameField: UITextField?, emailField: UITextField?,
         passwordFied: UITextField?,
         confirmPasswordField: UITextField?

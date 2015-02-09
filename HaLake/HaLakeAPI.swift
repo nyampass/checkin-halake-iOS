@@ -81,7 +81,40 @@ class HaLakeAPI: NSObject {
                 callback(isSuccess: false)
         }
     }
+
+    class func checkin(callback: (isSuccess: Bool) -> ()) {
+        changeCheckinStatus(true, callback: callback)
+    }
     
+    class func checkout(callback: (isSuccess: Bool) -> ()) {
+        changeCheckinStatus(false, callback: callback)
+    }
+    
+    class func changeCheckinStatus(isCheckin: Bool, callback: (isSuccess: Bool) -> ()) {
+        let (email, password) = User.authentication()
+        let url = Settings.APIBaseURL + (isCheckin ? "/checkin": "/checkout")
+
+        request(.POST, url, parameters: [
+            "email": email!,
+            "password": password!,
+            ]).responseJSON {(request, response, data, error) in
+                if((error) == nil) {
+                    print(data)
+                    if let json = data as? NSDictionary {
+                        let success = json["status"] as? String
+                        let isSuccess = (success == "success")
+                        
+                        if isSuccess {
+                            callback(isSuccess: true)
+                            return
+                        }
+                    }
+                }
+                
+                callback(isSuccess: false)
+        }
+    }
+
     class func events(callback: (eventsData: Array<Event>?) -> ()) {
         let (email, password) = User.authentication()
 
