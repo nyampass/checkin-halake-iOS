@@ -1,5 +1,5 @@
 //
-//  AccountController.swift
+//  ProfileController.swift
 //  HaLake
 //
 //  Created by Tokusei Noborio on 2015/01/28.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var user: User?
     var sections: Array<(title: String, rows: Array<(id: String, title: String, value: String)>)>!
 
@@ -26,7 +26,7 @@ class AccountController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: "AccountController", bundle: nil)
+        super.init(nibName: "ProfileController", bundle: nil)
     }
     
     func setUser(user: User ) {

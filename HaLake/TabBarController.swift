@@ -28,9 +28,9 @@ class TabBarController: UITabBarController {
             
             if (userData != nil) {
                 let user: User = User.dic2user(userData!)
-                let accountController = (controllers[2] as UINavigationController).viewControllers[0]
-                    as AccountController
-                accountController.setUser(user)
+                let profileController = (controllers[2] as UINavigationController)
+                    .viewControllers[0] as ProfileController
+                profileController.setUser(user)
             }
             
             println(userData)

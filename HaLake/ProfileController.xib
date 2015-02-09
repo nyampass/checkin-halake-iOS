@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountController" customModule="HaLake" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileController" customModule="HaLake" customModuleProvider="target">
             <connections>
                 <outlet property="profileTableView" destination="mrT-rT-KqR" id="8w2-R9-GXg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -16,10 +16,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="inside_halake.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NgE-wq-KbL">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                    <rect key="frame" x="1" y="0.0" width="375" height="94"/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="mrT-rT-KqR">
-                    <rect key="frame" x="0.0" y="96" width="375" height="569"/>
+                    <rect key="frame" x="1" y="95" width="375" height="569"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 </tableView>
             </subviews>
