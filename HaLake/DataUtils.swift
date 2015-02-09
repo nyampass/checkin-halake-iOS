@@ -9,6 +9,11 @@
 import UIKit
 
 class DataUtils: NSObject {
+    class func isValidEmail(str: String) -> Bool {
+        let pattern = NSRegularExpression(pattern: "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$", options: nil, error: nil)
+        return pattern?.matchesInString(str, options: nil, range: NSMakeRange(0, countElements(str))).count > 0
+    }
+
     class func str2date(str: String) -> NSDate! {
         let formatter = NSDateFormatter()
         formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
