@@ -49,6 +49,8 @@
 		DBD7100D1A8376DE00B47EA8 /* HaLakeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7100C1A8376DE00B47EA8 /* HaLakeAPI.swift */; };
 		DBD7100F1A837ED400B47EA8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7100E1A837ED400B47EA8 /* TabBarController.swift */; };
 		DBD710111A84A0EE00B47EA8 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD710101A84A0EE00B47EA8 /* DataUtils.swift */; };
+		DBDC56F41A883744001A8DCC /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDC56F21A883744001A8DCC /* ButtonCell.swift */; };
+		DBDC56F51A883744001A8DCC /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBDC56F31A883744001A8DCC /* ButtonCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		DBD7100C1A8376DE00B47EA8 /* HaLakeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HaLakeAPI.swift; sourceTree = "<group>"; };
 		DBD7100E1A837ED400B47EA8 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DBD710101A84A0EE00B47EA8 /* DataUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataUtils.swift; sourceTree = "<group>"; };
+		DBDC56F21A883744001A8DCC /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		DBDC56F31A883744001A8DCC /* ButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
 		E175B3D3A754A7D9438A507B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -265,6 +269,8 @@
 		DB9D5E9B1A7A09EC00848986 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				DBDC56F21A883744001A8DCC /* ButtonCell.swift */,
+				DBDC56F31A883744001A8DCC /* ButtonCell.xib */,
 				DBD710081A833D4000B47EA8 /* InputCell.swift */,
 				DBD710091A833D4000B47EA8 /* InputCell.xib */,
 				DBA51CE51A79B3FC00FEB72B /* TicketCell.swift */,
@@ -383,6 +389,7 @@
 				DBA51CE81A7A050E00FEB72B /* TicketCell.xib in Resources */,
 				DB559EF11A7928C200B0663D /* AccountController.xib in Resources */,
 				DB559EE91A791B8600B0663D /* tabbar_me@2x.png in Resources */,
+				DBDC56F51A883744001A8DCC /* ButtonCell.xib in Resources */,
 				DB5B2E621A4BDC3B007B2094 /* Images.xcassets in Resources */,
 				DBD7100B1A833D4000B47EA8 /* InputCell.xib in Resources */,
 			);
@@ -450,6 +457,7 @@
 				DB7572D51A6BE56900E611BE /* EventController.swift in Sources */,
 				DBD7100D1A8376DE00B47EA8 /* HaLakeAPI.swift in Sources */,
 				DB559EF01A7928C200B0663D /* AccountController.swift in Sources */,
+				DBDC56F41A883744001A8DCC /* ButtonCell.swift in Sources */,
 				DB5B2E571A4BDC3B007B2094 /* AppDelegate.swift in Sources */,
 				DB9579CB1A8794FF00C16945 /* TitleAndSubTitleCell.swift in Sources */,
 				DBD710071A83381000B47EA8 /* CreateAccountController.swift in Sources */,
