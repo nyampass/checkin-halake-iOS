@@ -37,7 +37,7 @@ class User {
         let user = User()
         user.id = dic["_id"] as String
         user.name = dic["name"] as String
-        user.phone = dic["phone"] as String
+        user.phone = dic["phone"] as? String
         return user
     }
 }
