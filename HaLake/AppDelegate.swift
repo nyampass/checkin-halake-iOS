@@ -43,17 +43,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         return true
     }
 
-    var isShowCheckinAlert = false
-    
+    var latestCheckin: NSDate!
+    let waitLatestCheckinInterval = 60.0 // sec
+
     func checkin()
     {
-        if (!isShowCheckinAlert) {
-            isShowCheckinAlert = true
+        if !User.isValidAuthentication() {
+            return
+        }
+        
+        if (latestCheckin != nil) {
+            println(latestCheckin!.timeIntervalSinceNow )
+        }
+        
+        if (latestCheckin == nil ||
+                latestCheckin!.timeIntervalSinceNow < -waitLatestCheckinInterval) {
+            latestCheckin = NSDate()
+
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                let v = UIAlertView(title: nil, message: "チェックインしました", delegate: self, cancelButtonTitle: "OK")
-//v.show()
-                
-                let alertView = UIUtils.alertView(nil, message: "HaLakeにチェックインしました！\nありがとうございます！",
+                let alertView = UIUtils.alertView(nil,
+                    message: "HaLakeにチェックインしました！\nありがとうございます！",
                     delegate: nil, cancelButtonTitle: "OK")
                 alertView.show()
             })
@@ -61,7 +70,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func alertView(alertView: FUIAlertView!, clickedButtonAtIndex buttonIndex: Int) {
-
     }
 
     func locationManager(manager: CLLocationManager!, didStartMonitoringForRegion region: CLRegion!) {
@@ -69,18 +77,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
-        self.sendLocalNotificationForMessage("Enter Region")
-        
         if(region.isMemberOfClass(CLBeaconRegion) && CLLocationManager.isRangingAvailable()) {
             self.manager?.startRangingBeaconsInRegion(region as CLBeaconRegion)
         }
     }
 
     func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
-        self.sendLocalNotificationForMessage("Enter Region")
-        
         if(region.isMemberOfClass(CLBeaconRegion) && CLLocationManager.isRangingAvailable()) {
-            let reg = region as CLBeaconRegion
             self.manager?.stopRangingBeaconsInRegion(region as CLBeaconRegion)
         }
     }
@@ -92,10 +95,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 self.manager?.startRangingBeaconsInRegion(reg)
             }
             break
-        case .Outside:
-            break
-        case .Unknown:
-            break
         default:
             break
         }
@@ -106,23 +105,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             let beacon = beacons[0] as? CLBeacon
             let proximity:CLProximity! = beacon?.proximity
             
-            if(proximity == CLProximity.Immediate) {
+            if( beacon?.major == 8019 && beacon?.major == 8019 &&
+                proximity == CLProximity.Immediate) {
                 self.checkin()
             }
         }
     }
     
-    func sendLocalNotificationForMessage(message: NSString!) {
-        var localNotification:UILocalNotification = UILocalNotification()
-        localNotification.alertBody = message
-        localNotification.fireDate = NSDate()
-        localNotification.soundName = UILocalNotificationDefaultSoundName
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-    }
-    
-    func setupIBeacon()
-    {
-        region = CLBeaconRegion(proximityUUID:proximityUUID,identifier:"iBeacon")
+    func setupIBeacon() {
+        region = CLBeaconRegion(proximityUUID:proximityUUID,identifier:"HaLakeBeacon")
         region?.notifyOnEntry = true
         region?.notifyOnExit = true
         region?.notifyEntryStateOnDisplay = false
@@ -142,7 +133,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 self.manager?.startRangingBeaconsInRegion(self.region)
             }
         default:
-            println("do nothing")
+            break
         }
     }
     
@@ -158,7 +149,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func mainController() -> UITabBarController {
         let tabs = NSArray(objects: UIUtils.navigation(TicketController()),
             UIUtils.navigation(EventController()),
-            UIUtils.navigation(AccountController()))
+            UIUtils.navigation(ProfileController()))
 
         let tabBarController = TabBarController()
         tabBarController.setViewControllers(tabs, animated: false)

@@ -116,7 +116,7 @@ class StartupController: UIViewController, UITextFieldDelegate, UIPopoverControl
     }
     
     @IBAction func tapCreateAccount(sender: AnyObject) {
-        presentViewController(UIUtils.navigation(CreateAccountController()), animated: true, completion: nil)
+        presentViewController(UIUtils.navigation(CreateProfileController()), animated: true, completion: nil)
     }
 
     override func viewWillAppear(animated: Bool) {

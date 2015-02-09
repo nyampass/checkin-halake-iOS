@@ -125,4 +125,14 @@ class UIUtils {
         let blue = CGFloat(rgbValue & 0xFF)/256.0
         return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
     }
+    
+    class func localNotification(message: String) {
+        var notif:UILocalNotification = UILocalNotification()
+
+        notif.alertBody = message
+        notif.fireDate = NSDate()
+        notif.soundName = UILocalNotificationDefaultSoundName
+
+        UIApplication.sharedApplication().scheduleLocalNotification(notif)
+    }
 }

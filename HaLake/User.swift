@@ -14,7 +14,10 @@ class User {
     var password: String!
     var phone: String!
     
-    init() {
+    class func isValidAuthentication() -> Bool {
+        let (id, password) = authentication()
+        return (id != nil && !id!.isEmpty &&
+            password != nil && !id!.isEmpty)
     }
 
     class func saveAuthentication(id: String, password: String) {
