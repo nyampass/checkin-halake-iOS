@@ -12,26 +12,33 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        fetchData()
+    }
+    
+    func fetchData() {
+        
         UIUtils.showActivityIndicator(self.view)
         
         let (id, password) = User.authentication()
         HaLakeAPI.login(id!, password: password!) { (userData, alertMessage) -> () in
             UIUtils.hideActivityIndicator(self.view)
-
+            
             let controllers = self.viewControllers!
             
-            let user: User = User.dic2user(userData!)
-            let accountController = (controllers[2] as UINavigationController).viewControllers[0]
-                as AccountController
-            accountController.setUser(user)
-
+            if (userData != nil) {
+                let user: User = User.dic2user(userData!)
+                let accountController = (controllers[2] as UINavigationController).viewControllers[0]
+                    as AccountController
+                accountController.setUser(user)
+            }
+            
             println(userData)
-
+            
             if let ticketObj = userData?["tickets"] as? Dictionary<String, AnyObject> {
                 println(ticketObj)
                 let ticketController = (controllers[0] as UINavigationController).viewControllers[0]
-                        as TicketController
+                    as TicketController
                 ticketController.setTickets(Ticket.dic2tickets(ticketObj))
             }
             

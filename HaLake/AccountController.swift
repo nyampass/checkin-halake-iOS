@@ -9,10 +9,7 @@
 import UIKit
 
 class AccountController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let CellIdentifier = "Cell"
-    
     var user: User?
-
     var sections: Array<(title: String, rows: Array<(id: String, title: String, value: String)>)>!
 
     @IBOutlet weak var profileTableView: UITableView!
@@ -47,12 +44,17 @@ class AccountController: UIViewController, UITableViewDelegate, UITableViewDataS
             ])
         
         sections.append(title: "連絡先",
-            rows: [(id: "tel", title: "Tel", value: user!.phone)])
+            rows: [(id: "tel", title: "Tel", value: user?.phone ?? "")])
+
+        sections.append(title: "",
+            rows: [(id: "logout", title: "", value: "")])
 
         self.navigationController?.navigationBarHidden = true
         
         profileTableView.registerClass(TitleAndSubTitleCell.self,
-            forCellReuseIdentifier: CellIdentifier)
+            forCellReuseIdentifier: "default")
+        profileTableView.registerNib(UINib(nibName: "ButtonCell", bundle: nil),
+            forCellReuseIdentifier: "button")
 
         profileTableView.delegate = self
         profileTableView.dataSource = self
@@ -72,9 +74,22 @@ class AccountController: UIViewController, UITableViewDelegate, UITableViewDataS
         return sections[section].title
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
-        if let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as? UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let row  = sections[indexPath.section].rows[indexPath.row]
+
+        if row.id == "logout" {
+            if let cell: ButtonCell = tableView.dequeueReusableCellWithIdentifier("button")
+                    as? ButtonCell {
+            
+                cell.button .addTarget(self, action: "tapLogout",
+                    forControlEvents: .TouchUpInside)
+            
+                return cell
+            }
+        }
+        
+        
+        if let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("default") as? UITableViewCell {
             let rows  = sections[indexPath.section].rows
             
             cell.tag = indexPath.section
@@ -89,11 +104,13 @@ class AccountController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         return UITableViewCell()
     }
-    /*
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 145
+    
+    func tapLogout() {
+        User.saveAuthentication("", password: "")
+        (UIApplication.sharedApplication().delegate as AppDelegate).window?.rootViewController =
+                StartupController()
+
     }
-*/
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }

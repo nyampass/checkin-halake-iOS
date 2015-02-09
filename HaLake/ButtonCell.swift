@@ -14,12 +14,13 @@ class ButtonCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        button.buttonColor = UIColor.turquoiseColor()
-        button.shadowColor = UIColor.greenSeaColor()
+        button.buttonColor = UIColor.whiteColor()
+        button.shadowColor = UIColor.asbestosColor()
         button.shadowHeight = 3.0
         button.cornerRadius = 6.0
         button.titleLabel?.font = UIFont.boldFlatFontOfSize(16)
-        
-        button.setTitleColor(UIColor.cloudsColor(), forState: .Normal & .Highlighted)
+
+        button.setTitleColor(UIColor.asbestosColor(),
+            forState: .Normal & .Highlighted)
     }
 }

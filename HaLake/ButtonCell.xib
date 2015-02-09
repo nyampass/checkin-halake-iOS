@@ -13,13 +13,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHh-i1-tWD" customClass="FUIButton">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHh-i1-tWD" customClass="FUIButton">
                         <rect key="frame" x="35" y="7" width="251" height="30"/>
-                        <state key="normal" title="Button">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="251" id="JDp-Zq-UUo"/>
+                            <constraint firstAttribute="height" constant="30" id="wnj-9D-Mcb"/>
+                        </constraints>
+                        <state key="normal" title="ログアウト">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerY" secondItem="fHh-i1-tWD" secondAttribute="centerY" id="AFt-Ou-L4r"/>
+                    <constraint firstAttribute="centerX" secondItem="fHh-i1-tWD" secondAttribute="centerX" id="xEs-eH-3mS"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="button" destination="fHh-i1-tWD" id="Uct-4H-cav"/>
