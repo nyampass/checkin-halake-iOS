@@ -8,9 +8,13 @@
 
 import UIKit
 
-class TicketController: UITableViewController {
-    var tickets: Array<Ticket> = Array()
+class TicketController: UITableViewController, FUIAlertViewDelegate {
+    let alertTagUseTicket = 1
+    let alertTagMessage = 2
     
+    var tickets: Array<Ticket> = Array()
+    var tappedIndex: Int = 0
+
     override init() {
         super.init()
     
@@ -38,7 +42,7 @@ class TicketController: UITableViewController {
         var nib  = UINib(nibName: "TicketCell", bundle:nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "TicketCell")
       
-        tableView.backgroundColor = UIColor.pumpkinColor()
+        tableView.backgroundColor = UIColor.cloudsColor()
         tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLineEtched
 
     }
@@ -85,6 +89,9 @@ class TicketController: UITableViewController {
             cell.configureFlatCellWithColor(UIColor.whiteColor(), selectedColor: UIColor.cloudsColor(),
                 roundingCorners: .AllCorners)
             
+            cell.ticketController = self
+            cell.indexPath = indexPath
+
             let ticketView = cell.ticketView
             ticketView.frame = cell.contentView.bounds
             ticketView.layer.masksToBounds = true
@@ -110,10 +117,42 @@ class TicketController: UITableViewController {
         return 59
     }
     
+    func tapUseButton(indexPath: NSIndexPath) {
+        let ticket = tickets[indexPath.section]
+        tappedIndex = indexPath.section
+        
+        let alertView = UIUtils.alertView("チケット使用", message: "チケット\"\(ticket.name)\"を使用しますか？\n\n" +
+            "HaLakeスタッフにお見せして下記の[使用する]ボタンを押してもらって下さい.\n事前に押してしまうと無効になります",
+            delegate: self, cancelButtonTitle: "キャンセル")
+        UIUtils.addButtonToAlertView(alertView, title:  "使用する")
+        alertView.tag = alertTagUseTicket
+        alertView.show()
+    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let alertView = UIUtils.alertView(nil, message: "チェックインしました！",
-            delegate: nil, cancelButtonTitle: "OK")
-        alertView.show()
+    }
+    
+    func alertView(alertView: FUIAlertView!, clickedButtonAtIndex buttonIndex: Int) {
+        println(alertView.tag)
+        if alertView.tag == alertTagUseTicket && buttonIndex == 1 {
+            UIUtils.showActivityIndicator(self.tabBarController!.view)
+            
+            let ticket = tickets[tappedIndex]
+            HaLakeAPI.useTicket(ticket.id, callback: { (isSuccess) -> () in
+                dispatch_async(dispatch_get_main_queue(), {
+                    UIUtils.hideActivityIndicator(self.tabBarController!.view)
+                    if !isSuccess {
+                        let alertView = UIUtils.alertView("チケット使用",
+                            message: "チケットの利用に失敗しました。スタッフにお問い合わせ下さい",
+                            delegate: self,
+                            cancelButtonTitle: "キャンセル")
+                        alertView.tag = self.alertTagMessage
+                        alertView.show()
+                    } else {
+                        (self.tabBarController as TabBarController).fetchData()
+                    }
+                })
+            })
+        }
     }
 }

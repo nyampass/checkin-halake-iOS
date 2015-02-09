@@ -55,15 +55,40 @@ class HaLakeAPI: NSObject {
         }
     }
     
+    class func useTicket(ticketType: String, callback: (isSuccess: Bool) -> ()) {
+        let (email, password) = User.authentication()
+        
+        request(.PUT, Settings.APIBaseURL + "/users/me/tickets/" + ticketType, parameters: [
+            "email": email!,
+            "password": password!,
+            "used": true
+            ]).responseJSON {(request, response, data, error) in
+                println(request)
+                println(response)
+                if((error) == nil) {
+                    print(data)
+                    if let json = data as? NSDictionary {
+                        let success = json["status"] as? String
+                        let isSuccess = (success == "success")
+
+                        if isSuccess {
+                            callback(isSuccess: true)
+                            return
+                        }
+                    }
+                }
+
+                callback(isSuccess: false)
+        }
+    }
+    
     class func events(callback: (eventsData: Array<Event>?) -> ()) {
         let (email, password) = User.authentication()
-        let params = [
+
+        request(.GET, Settings.APIBaseURL + "/events", parameters: [
             "email": email!,
             "password": password!
-        ]
-
-        request(.GET, Settings.APIBaseURL + "/events", parameters: params)
-            .responseJSON {(request, response, data, error) in
+            ]).responseJSON {(request, response, data, error) in
                 if((error) == nil) {
                     print(data)
                     if let json = data as? NSDictionary {
@@ -80,6 +105,7 @@ class HaLakeAPI: NSObject {
                                 }
                             }
                             callback(eventsData: events)
+                            return
                         }
                     }
                 }
