@@ -80,9 +80,9 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         if row.id == "logout" {
             if let cell: ButtonCell = tableView.dequeueReusableCellWithIdentifier("button")
                     as? ButtonCell {
-            
-                cell.button .addTarget(self, action: "tapLogout",
-                    forControlEvents: .TouchUpInside)
+                        cell.button.addTarget(self, action: "tapLogout",
+                            forControlEvents: .TouchUpInside)
+                        cell.button?.buttonColor = UIColor.cloudsColor()
             
                 return cell
             }
