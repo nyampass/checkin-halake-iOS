@@ -22,10 +22,17 @@ class CreateProfileController: UITableViewController {
             highlightedColor: UIColor.carrotColor(), cornerRadius: 2)
         
         self.navigationItem.leftBarButtonItem = UIUtils.barButtonItem("閉じる", target: self, action: "tapCancel:")
-        self.navigationItem.rightBarButtonItem = UIUtils.barButtonItem("作成", target: self, action: "tapCreate:")
+
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+
+        tableView.registerNib(UINib(nibName: "InputCell", bundle: nil),
+            forCellReuseIdentifier: "InputCell")
         
-        let nib = UINib(nibName: "InputCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "InputCell")
+        tableView.registerNib(UINib(nibName: "AgreementInCreateAccountCell", bundle: nil),
+            forCellReuseIdentifier: "AgreementCell")
+
+        tableView.registerNib(UINib(nibName: "ButtonCell", bundle: nil),
+            forCellReuseIdentifier: "ButtonCell")
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -33,7 +40,7 @@ class CreateProfileController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 6
     }
     
     func tapCancel(barButtonItem: UIBarButtonItem)
@@ -47,6 +54,7 @@ class CreateProfileController: UITableViewController {
     
     func tapCreate(barButtonItem: UIBarButtonItem)
     {
+        self.view.endEditing(true)
         var errMessage: String!
         
         if nameField!.text.isEmpty {
@@ -84,6 +92,8 @@ class CreateProfileController: UITableViewController {
                         isSuccess = (success == "success")
                         
                         if (isSuccess) {
+                            UIUtils.hideActivityIndicator(self.view)
+
                             let id = json["user"]?["_id"]? as String
                             User.saveAuthentication(id, password: params["password"]!)
                             
@@ -92,23 +102,81 @@ class CreateProfileController: UITableViewController {
                             return
                         }
                         alertMessage = json["reason"] as? String
+                        
+                        if ((alertMessage) == nil) {
+                            alertMessage = "登録に失敗しました。"
+                        }
                     }
-                    
                 }
-                
+
                 dispatch_async(dispatch_get_main_queue(), {
                     UIUtils.hideActivityIndicator(self.view)
                     
                     UIUtils.alertView(nil, message: alertMessage, delegate: nil, cancelButtonTitle: "OK")
                     let alert = UIAlertView()
+                    
                     alert.message = alertMessage
                     alert.addButtonWithTitle("OK")
                     alert.show()
                 })
         }
     }
+    
+    func heightForRowAtIndexPath(indexPath: NSIndexPath) -> CGFloat {
+        switch (indexPath.row) {
+        case 0:
+            return 94;
+            
+        case 5:
+            return 44;
+            
+        default:
+            return 44;
+        }
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return heightForRowAtIndexPath(indexPath)
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return heightForRowAtIndexPath(indexPath)
+    }
+    
+    func tapAgreement() {
+        let controller = WebController(url: NSURL(string: Settings.APIBaseURL + "/../agreement.html")!)
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("AgreementCell", forIndexPath: indexPath) as AgreementInCreateAccountCell
+            
+            
+            cell.agreementButton.addTarget(self, action: "tapAgreement", forControlEvents: UIControlEvents.TouchUpInside)
+            
+            return cell;
+
+        } else if indexPath.row == 5 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("ButtonCell", forIndexPath: indexPath) as ButtonCell
+            
+            
+            let button = cell.button
+            button.setTitle("同意して登録する", forState: .Normal)
+
+            button?.buttonColor = UIColor.sunflowerColor()
+            button?.shadowColor = UIColor.orangeColor()
+            button?.shadowHeight = 3.0
+            button?.cornerRadius = 6.0;
+            button?.titleLabel?.font = UIFont.boldFlatFontOfSize(16)
+            button?.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Normal)
+            button?.setTitleColor(UIColor.cloudsColor(), forState:UIControlState.Highlighted)
+
+            cell.button.addTarget(self, action: "tapCreate:", forControlEvents: UIControlEvents.TouchUpInside)
+            
+            return cell;
+        }
+        
         var cell = tableView.dequeueReusableCellWithIdentifier("InputCell", forIndexPath: indexPath) as UITableViewCell
         if let inputCell = cell as? InputCell {
             inputCell.textField.keyboardType = UIKeyboardType.EmailAddress
@@ -121,7 +189,7 @@ class CreateProfileController: UITableViewController {
             
             var label: String = "", isSecure: Bool = false
 
-            switch (indexPath.row) {
+            switch (indexPath.row - 1) {
             case 0:
                 label = "名前"
                 nameField = inputCell.textField
@@ -140,18 +208,21 @@ class CreateProfileController: UITableViewController {
                 label = "確認用パスワード"
                 isSecure = true
                 confirmPasswordField = inputCell.textField
-            
+                
             default:
                 break;
             }
-            
-            
+
             inputCell.label.text = ""
             inputCell.textField.placeholder = label
             inputCell.textField.secureTextEntry = isSecure
+            inputCell.textField.addTarget(self, action: "onDidEndOnExit:", forControlEvents: UIControlEvents.EditingDidEndOnExit)
         }
         
         return cell
+    }
+    
+    func onDidEndOnExit(sender: UITextField) {
     
     }
 }

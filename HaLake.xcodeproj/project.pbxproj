@@ -49,6 +49,8 @@
 		DBD7100D1A8376DE00B47EA8 /* HaLakeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7100C1A8376DE00B47EA8 /* HaLakeAPI.swift */; };
 		DBD7100F1A837ED400B47EA8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7100E1A837ED400B47EA8 /* TabBarController.swift */; };
 		DBD710111A84A0EE00B47EA8 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD710101A84A0EE00B47EA8 /* DataUtils.swift */; };
+		DBDB87531A9B287700C6739B /* AgreementInCreateAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB87511A9B287700C6739B /* AgreementInCreateAccountCell.swift */; };
+		DBDB87541A9B287700C6739B /* AgreementInCreateAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBDB87521A9B287700C6739B /* AgreementInCreateAccountCell.xib */; };
 		DBDC56F41A883744001A8DCC /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDC56F21A883744001A8DCC /* ButtonCell.swift */; };
 		DBDC56F51A883744001A8DCC /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBDC56F31A883744001A8DCC /* ButtonCell.xib */; };
 /* End PBXBuildFile section */
@@ -113,6 +115,8 @@
 		DBD7100C1A8376DE00B47EA8 /* HaLakeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HaLakeAPI.swift; sourceTree = "<group>"; };
 		DBD7100E1A837ED400B47EA8 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DBD710101A84A0EE00B47EA8 /* DataUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataUtils.swift; sourceTree = "<group>"; };
+		DBDB87511A9B287700C6739B /* AgreementInCreateAccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementInCreateAccountCell.swift; sourceTree = "<group>"; };
+		DBDB87521A9B287700C6739B /* AgreementInCreateAccountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementInCreateAccountCell.xib; sourceTree = "<group>"; };
 		DBDC56F21A883744001A8DCC /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		DBDC56F31A883744001A8DCC /* ButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
 		E175B3D3A754A7D9438A507B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +282,8 @@
 				DB9D5E9E1A7A11D800848986 /* EventCell.swift */,
 				DB9D5E9F1A7A11D800848986 /* EventCell.xib */,
 				DB9579CA1A8794FF00C16945 /* TitleAndSubTitleCell.swift */,
+				DBDB87511A9B287700C6739B /* AgreementInCreateAccountCell.swift */,
+				DBDB87521A9B287700C6739B /* AgreementInCreateAccountCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 				DB9D5EA51A7A1C5B00848986 /* icon_coffee@2x.png in Resources */,
 				DB559EF31A792AB200B0663D /* inside_halake@2x.jpg in Resources */,
 				DB5B2E7D1A4C2978007B2094 /* StartupController.xib in Resources */,
+				DBDB87541A9B287700C6739B /* AgreementInCreateAccountCell.xib in Resources */,
 				DB559EED1A791E4000B0663D /* tabbar_ticket@2x.png in Resources */,
 				DBCBE77B1A86EC3300EBA822 /* icon_ticket_pc@2x.png in Resources */,
 				DB7381991A86534F00E412E5 /* icon_open@2x.png in Resources */,
@@ -459,6 +466,7 @@
 				DBD7100D1A8376DE00B47EA8 /* HaLakeAPI.swift in Sources */,
 				DBDC56F41A883744001A8DCC /* ButtonCell.swift in Sources */,
 				DB5B2E571A4BDC3B007B2094 /* AppDelegate.swift in Sources */,
+				DBDB87531A9B287700C6739B /* AgreementInCreateAccountCell.swift in Sources */,
 				DB9579CB1A8794FF00C16945 /* TitleAndSubTitleCell.swift in Sources */,
 				DBD710071A83381000B47EA8 /* CreateAccountController.swift in Sources */,
 				DB2F4B391A85F74700D5C373 /* WebController.swift in Sources */,

@@ -24,13 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         UITabBar.appearance().barTintColor = colorBg
 
         setupIBeacon()
-        
-        if (application.respondsToSelector("registerUserNotificationSettings:")) {
-            let settings = UIUserNotificationSettings(forTypes:
-                    UIUserNotificationType.Alert | UIUserNotificationType.Sound,
-                categories: nil)
-            application.registerUserNotificationSettings(settings)
-        }
+
+        let types = UIRemoteNotificationType.Alert |
+                UIRemoteNotificationType.Badge |
+                UIRemoteNotificationType.Sound
+        application.registerForRemoteNotifications()
+        application.registerForRemoteNotificationTypes(types)
         
         let (id, password) = User.authentication()
         if (id == nil) {
@@ -144,9 +143,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func setupIBeacon() {
         region = CLBeaconRegion(proximityUUID:proximityUUID,identifier:"HaLakeBeacon")
-        region?.notifyOnEntry = true
-        region?.notifyOnExit = true
-        region?.notifyEntryStateOnDisplay = false
+        region?.notifyOnEntry = false
+        region?.notifyOnExit = false
+        region?.notifyEntryStateOnDisplay = true
         
         manager = CLLocationManager()
         manager?.delegate = self
@@ -158,7 +157,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         case .NotDetermined:
             if (NSProcessInfo().respondsToSelector("operatingSystemVersion") &&
                     NSProcessInfo().operatingSystemVersion.majorVersion >= 8) {
-                self.manager?.requestAlwaysAuthorization()
+                self.manager?.requestWhenInUseAuthorization()
             }else{
                 self.manager?.startRangingBeaconsInRegion(self.region)
             }
