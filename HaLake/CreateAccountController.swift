@@ -115,8 +115,13 @@ class CreateProfileController: UITableViewController {
                     UIUtils.alertView(nil, message: alertMessage, delegate: nil, cancelButtonTitle: "OK")
                     let alert = UIAlertView()
                     
+                    if (alertMessage == nil) {
+                        alertMessage = "入力されたアドレスはすでに登録済みです。"
+                    }
+                    
                     alert.message = alertMessage
                     alert.addButtonWithTitle("OK")
+
                     alert.show()
                 })
         }
