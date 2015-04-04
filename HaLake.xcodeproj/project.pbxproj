@@ -349,6 +349,7 @@
 				TargetAttributes = {
 					DB5B2E501A4BDC3B007B2094 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 9E9VP74T8U;
 					};
 					DB5B2E691A4BDC3B007B2094 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -588,11 +589,12 @@
 			baseConfigurationReference = 6EDC750089BF00DE867DC384 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = HaLake/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f8ffdca8-02c8-4361-91a9-953c33339350";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/HaLake-Bridging-Header.h";
 			};
 			name = Debug;
@@ -602,11 +604,12 @@
 			baseConfigurationReference = BBA807AFE53DC0AA9ECD125D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = HaLake/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f8ffdca8-02c8-4361-91a9-953c33339350";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/HaLake-Bridging-Header.h";
 			};
 			name = Release;
