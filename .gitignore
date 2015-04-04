@@ -15,5 +15,7 @@ profile
 *.moved-aside
 Settings.swift
 
+FacebookSDK.framework/*
+
 #CocoaPod
 Pods/*
