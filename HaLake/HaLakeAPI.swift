@@ -146,4 +146,18 @@ class HaLakeAPI: NSObject {
                 callback(eventsData: nil)
         }
     }
+    
+    class func pushDeviceToken(token: String) {
+        let (email, password) = User.authentication()
+        
+        if (email) != nil && (password) != nil {
+            request(.PUT, Settings.APIBaseURL + "/users/me/tokens", parameters: [
+                "email": email!,
+                "password": password!,
+                "key": "apns",
+                "value": token
+                ]).responseJSON {(request, response, data, error) in
+            }
+        }
+    }
 }

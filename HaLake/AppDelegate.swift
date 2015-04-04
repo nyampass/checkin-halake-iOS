@@ -25,11 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
         setupIBeacon()
 
-        let types = UIRemoteNotificationType.Alert |
-                UIRemoteNotificationType.Badge |
-                UIRemoteNotificationType.Sound
-        application.registerForRemoteNotifications()
-        application.registerForRemoteNotificationTypes(types)
+        let types = UIUserNotificationType.Alert |
+                UIUserNotificationType.Badge |
+                UIUserNotificationType.Sound
+        let settings = UIUserNotificationSettings(forTypes: types, categories: nil)
+        application.registerUserNotificationSettings(settings)
         
         let (id, password) = User.authentication()
         if (id == nil) {
@@ -143,6 +143,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func setupIBeacon() {
         region = CLBeaconRegion(proximityUUID:proximityUUID,identifier:"HaLakeBeacon")
+
         region?.notifyOnEntry = false
         region?.notifyOnExit = false
         region?.notifyEntryStateOnDisplay = true
@@ -151,24 +152,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         manager?.delegate = self
     
         switch CLLocationManager.authorizationStatus() {
-        case .Authorized, .AuthorizedWhenInUse:
+        case .AuthorizedAlways, .AuthorizedWhenInUse:
             self.manager?.startRangingBeaconsInRegion(self.region)
 
         case .NotDetermined:
-            if (NSProcessInfo().respondsToSelector("operatingSystemVersion") &&
-                    NSProcessInfo().operatingSystemVersion.majorVersion >= 8) {
-                self.manager?.requestWhenInUseAuthorization()
-            }else{
-                self.manager?.startRangingBeaconsInRegion(self.region)
-            }
+            self.manager?.requestWhenInUseAuthorization()
+
         default:
             break
         }
     }
     
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        var chars: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
+        
+        var tokenString: String = ( deviceToken.description as NSString )
+            .stringByTrimmingCharactersInSet( chars )
+            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
+        
+        HaLakeAPI.pushDeviceToken(tokenString)
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println(error)
+    }
+    
+    func application( application: UIApplication!, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData! ) {
+        
+    }
+    
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if(status == .NotDetermined) {
-        } else if(status == .Authorized) {
+        } else if(status == .AuthorizedAlways) {
             self.manager?.startMonitoringForRegion(self.region)
         } else if(status == .AuthorizedWhenInUse) {
             self.manager?.startRangingBeaconsInRegion(self.region)
@@ -194,12 +209,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
+        application.applicationIconBadgeNumber = 0
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
+        application.applicationIconBadgeNumber = 0
     }
 
     func applicationWillTerminate(application: UIApplication) {
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        application.registerForRemoteNotifications()
+    }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
     }
 }
 
